@@ -1,9 +1,97 @@
-// Import Google fonts
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Raleway:400,100,300,700,500");
+@font-face {
+    font-family: 'Millimetre';
+    src:    font-url('Millimetre/Bold/Millimetre-Bold_web.eot');
+    src:    font-url('Millimetre/Bold/Millimetre-Bold_web.eot?#iefix') format('embedded-opentype'),
+            font-url('Millimetre/Bold/Millimetre-Bold_web.woff') format('woff'),
+            font-url('Millimetre/Bold/Millimetre-Bold_web.woff2') format('woff2'),
+            font-url('Millimetre/Bold/Millimetre-Bold_web.ttf') format('truetype'),
+            font-url('Millimetre/Bold/Millimetre-Bold_web.svg#svgFontName') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Millimetre';
+    src:    font-url('Millimetre/Regular/Millimetre-Regular_web.eot');
+    src:    font-url('Millimetre/Regular/Millimetre-Regular_web.eot?#iefix') format('embedded-opentype'),
+            font-url('Millimetre/Regular/Millimetre-Regular_web.woff') format('woff'),
+            font-url('Millimetre/Regular/Millimetre-Regular_web.woff2') format('woff2'),
+            font-url('Millimetre/Regular/Millimetre-Regular_web.ttf') format('truetype'),
+            font-url('Millimetre/Regular/Millimetre-Regular_web.svg#svgFontName') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Millimetre_Condensed';
+    src:    font-url('Millimetre/CondensedRegular/Millimetre-Condensed_Regular_web.eot');
+    src:    font-url('Millimetre/CondensedRegular/Millimetre-Condensed_Regular_web.eot?#iefix') format('embedded-opentype'),
+            font-url('Millimetre/CondensedRegular/Millimetre-Condensed_Regular_web.woff') format('woff'),
+            font-url('Millimetre/CondensedRegular/Millimetre-Condensed_Regular_web.woff2') format('woff2'),
+            font-url('Millimetre/CondensedRegular/Millimetre-Condensed_Regular_web.ttf') format('truetype'),
+            font-url('Millimetre/CondensedRegular/Millimetre-Condensed_Regular_web.svg#svgFontName') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Commune_Nuit_Debout';
+    src:    font-url('NuitDebout/Commune-Nuit_Debout_web.eot');
+    src:    font-url('NuitDebout/Commune-Nuit_Debout_web.eot?#iefix') format('embedded-opentype'),
+            font-url('NuitDebout/Commune-Nuit_Debout_web.woff') format('woff'),
+            font-url('NuitDebout/Commune-Nuit_Debout_web.woff2') format('woff2'),
+            font-url('NuitDebout/Commune-Nuit_Debout_web.ttf') format('truetype'),
+            font-url('NuitDebout/Commune-Nuit_Debout_web.svg#svgFontName') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'lackitalic';
+    src: font-url('lack-italic-Lack.woff2') format('woff2'),
+         font-url('lack-italic-Lack.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'lack_lineitalic';
+    src: font-url('lack-line-italic-Lack.woff2') format('woff2'),
+         font-url('lack-line-italic-Lack.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'lack_lineregular';
+    src: font-url('Lack-Line-Regular.woff2') format('woff2'),
+         font-url('Lack-Line-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'lackregular';
+    src: font-url('Lack-Regular.woff2') format('woff2'),
+         font-url('Lack-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+@font-face {
+    font-family: 'SpaceGrotesk-Regular';
+    src: font-url('SpaceGrotesk-Regular.woff2') format('woff2'),
+         font-url('SpaceGrotesk-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 
 // Define fonts for body and headers
-$body-font: "Open Sans", "Helvetica", "sans-serif";
-$headers-font: "Raleway", "Helvetica", "sans-serif";
+$body-font: "Millimetre", "sans-serif";
+$headers-font: "Millimetre", "sans-serif";
 
 // To use a font file (.woff) uncomment following lines
 // @font-face {
@@ -14,3 +102,4 @@ $headers-font: "Raleway", "Helvetica", "sans-serif";
 //        font-url('FontFile.ttf') format('truetype')
 // }
 // $my-font: "Font Name";
+
