@@ -1,0 +1,19 @@
+div.cursor {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 50px;
+  height: 50px;
+  background-color: red;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.25s, height 0.25s;
+  z-index: 10;
+  -webkit-filter: blur(18px);
+}
+
+div.cursor.is-down {
+  width: 100px;
+  height: 100px;
+  -webkit-filter: blur(15px);
+}

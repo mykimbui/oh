@@ -1,84 +1,83 @@
-// Specific CSS for your home-page
-@keyframes rotating {
-  from {
-    transform: rotate(0deg);
-  }
+// // Specific CSS for your home-page
+// @keyframes rotating {
+//   from {
+//     transform: rotate(0deg);
+//   }
 
-  to {
-    transform: rotate(360deg);
-  }
-}
+//   to {
+//     transform: rotate(360deg);
+//   }
+// }
+// body {
+//   background-color: #f3f3f3;
+// }
 
-body {
-  background-color: #f3f3f3;
-}
+// .menu {
+//   justify-content:center;
+//   align-items:center;
+//   display: flex;
+//   height: 100vh;
+// }
 
-.menu {
-  justify-content:center;
-  align-items:center;
-  display: flex;
-  height: 100vh;
-}
+// .bites {
+//   color: black;
+//   display: flex;
+//   flex-wrap: wrap;
+//   justify-content: center;
+// }
 
-.bites {
-  color: black;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
+// .bite__item {
+//   display: inline-block;
+//   max-width: 100%;
+//   width: 400px;
+// }
 
-.bite__item {
-  display: inline-block;
-  max-width: 100%;
-  width: 400px;
-}
+// .bite__inner {
+//   display: block;
+//   height: 0;
+//   padding-top: 100%;
+//   position: relative;
+//   width: 100%;
+// }
 
-.bite__inner {
-  display: block;
-  height: 0;
-  padding-top: 100%;
-  position: relative;
-  width: 100%;
-}
+// .bite__item svg {
+//   height: 100%;
+//   left: 0;
+//   position: absolute;
+//   top: 0;
+//   width: 100%;
+// }
 
-.bite__item svg {
-  height: 100%;
-  left: 0;
-  position: absolute;
-  top: 0;
-  width: 100%;
-}
+// .bite__item textPath {
+//   fill: black;
+//   font-size: 100px;
+//   text-transform: uppercase;
+//   font-family: 'Commune_Nuit_Debout';
+// }
 
-.bite__item textPath {
-  fill: black;
-  font-size: 100px;
-  text-transform: uppercase;
-  font-family: 'Commune_Nuit_Debout';
-}
+// .bite__item tspan {
+//   fill: #fff;
+//   font-size: .8em;
+// }
 
-.bite__item tspan {
-  fill: #fff;
-  font-size: .8em;
-}
+// .bite__item svg {
+//  animation: rotating 10s linear infinite;
+// }
 
-.bite__item svg {
- animation: rotating 10s linear infinite;
-}
+// .bite__item:hover svg {
+//  animation-play-state: paused;
+// }
 
-.bite__item:hover svg {
- animation-play-state: paused;
-}
+// .bite__img {
+//   animation: rotating 3s linear infinite reverse;
+//   animation-play-state: paused;
+//   height: 50%;
+//   left: 25%;
+//   position: absolute;
+//   top: 25%;
+//   width: 50%;
+// }
 
-.bite__img {
-  animation: rotating 3s linear infinite reverse;
-  animation-play-state: paused;
-  height: 50%;
-  left: 25%;
-  position: absolute;
-  top: 25%;
-  width: 50%;
-}
-
-.bite__item:hover .bite__img {
-  animation-play-state: running;
-}
+// .bite__item:hover .bite__img {
+//   animation-play-state: running;
+// }

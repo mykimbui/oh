@@ -1,6 +1,6 @@
 <div class="wrapper">
   <div class="menu-menu">
-    <ul>
+    <ul class="columnspace">
       <li>About<%= image_tag("arrow-up-right.svg", class:"arrow") %></li>
       <% @projects.each do |project| %>
       <li><%= project.name %><%= image_tag("arrow-up-right.svg", class:"arrow") %></li>
@@ -11,10 +11,12 @@
   <div class="projects">
     <ul>
       <% @projects.each do |project| %>
-      <% project.pictures.each do |picture| %>
-      <li><%= image_tag(picture.url) %></li>
-      <% end %>
-      <%= project.description %>
+      <div class="projectbg" style="background-color: <%= project.background %>;">
+        <% project.pictures.each do |picture| %>
+          <li class="space"><%= image_tag(picture.url) %></li>
+        <% end %>
+        <%= project.description %>
+      </div>
       <% end %>
     </ul>
   </div>
