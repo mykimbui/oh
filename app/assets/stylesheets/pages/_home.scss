@@ -1,11 +1,8 @@
 body {
   font-family: 'SpaceGrotesk-Regular';
   color: #2f2f2f;
-  -webkit-filter: contrast(40);
-}
-
-.arrow {
-  stroke: #2f2f2f;
+  // -webkit-filter: contrast(40);
+  overflow-x: hidden;
 }
 
 ul {
@@ -22,19 +19,40 @@ img {
   height: auto;
 }
 
-.space {
-  // margin-bottom: 1.5em;
+.columnmenu {
+  // margin-left: 1em;
+  // margin-top: 1.5em;
 }
 
-.columnspace {
-  margin-left: 1em;
+.fixed {
   position: fixed;
-  margin-top: 1.5em;
+}
+
+.introduction {
+  width: 90%;
+  display: none;
+  padding-bottom: 1em;
 }
 
 .projectbg {
   width: 100%;
   height: auto;
+  padding-left: 1.5em;
+  padding-top: 1.5em;
+  padding-bottom: 1.5em;
+  // -webkit-filter: blur(10px);
+}
+
+.contrast {
+  -webkit-filter: contrast(40);
+}
+
+
+.projectbgbis {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  padding-left: 1.5em;
   padding-top: 1.5em;
   padding-bottom: 1.5em;
   -webkit-filter: blur(15px);

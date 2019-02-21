@@ -1,0 +1,23 @@
+.arrow {
+  stroke: #2f2f2f;
+}
+
+.fading {
+  transition: all 0.5s ease;
+}
+
+.rightrotate {
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
+.about {
+  cursor: pointer;
+}
+
+.biggerarrow {
+  width: 50px;
+}
