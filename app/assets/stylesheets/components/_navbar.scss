@@ -3,6 +3,7 @@
   top: 0;
   left: 0;
   display: inline-block;
+  // -webkit-filter: contrast(40);
 }
 
 .lilspacetoright {
@@ -11,4 +12,14 @@
 
 .title-ohmy {
   font-size: 50px;
+}
+
+.introduction {
+  width: 90%;
+  display: none;
+  padding-bottom: 1em;
+}
+
+.contactme {
+  display: none;
 }

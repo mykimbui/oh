@@ -4,19 +4,6 @@ const contactButton = document.querySelector(".contactmeme")
 const contactText = document.querySelector(".contactme")
 const arrowInfo = document.querySelector(".arrow-info");
 const arrowContact = document.querySelector(".arrow-contact");
-// element.classList.remove("mystyle");
-
-
-// function myFunction() {
-//   var arrowUp = document.querySelector("div.boxy");
-//     arrowUp.classList.remove("hide");
-//   // if (arrowUp.style.display === "none") {
-//   //   arrowUp.style.display = "block";
-//   // } else {
-//   //   arrowUp.style.display = "none";
-//   // }
-// }
-
 
 about.addEventListener("click", function(){
   if (intro.style.display === "none") {

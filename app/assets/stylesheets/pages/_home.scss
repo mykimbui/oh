@@ -19,19 +19,8 @@ img {
   height: auto;
 }
 
-.columnmenu {
-  // margin-left: 1em;
-  // margin-top: 1.5em;
-}
-
 .fixed {
   position: fixed;
-}
-
-.introduction {
-  width: 90%;
-  display: none;
-  padding-bottom: 1em;
 }
 
 .projectbg {
@@ -44,16 +33,16 @@ img {
 }
 
 .contrast {
-  -webkit-filter: contrast(40);
+  // -webkit-filter: contrast(40);
 }
 
 
-.projectbgbis {
-  position: absolute;
-  width: 100%;
-  height: auto;
-  padding-left: 1.5em;
-  padding-top: 1.5em;
-  padding-bottom: 1.5em;
-  -webkit-filter: blur(15px);
-}
+// .projectbgbis {
+//   position: absolute;
+//   width: 100%;
+//   height: auto;
+//   padding-left: 1.5em;
+//   padding-top: 1.5em;
+//   padding-bottom: 1.5em;
+//   -webkit-filter: blur(15px);
+// }
