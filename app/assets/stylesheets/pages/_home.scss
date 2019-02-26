@@ -23,26 +23,18 @@ img {
   position: fixed;
 }
 
-.projectbg {
-  width: 100%;
-  height: auto;
-  padding-left: 1.5em;
-  padding-top: 1.5em;
-  padding-bottom: 1.5em;
-  // -webkit-filter: blur(10px);
-}
-
 .contrast {
   // -webkit-filter: contrast(40);
 }
 
+canvas {
+  vertical-align: bottom;
+}
 
-// .projectbgbis {
-//   position: absolute;
-//   width: 100%;
-//   height: auto;
-//   padding-left: 1.5em;
-//   padding-top: 1.5em;
-//   padding-bottom: 1.5em;
-//   -webkit-filter: blur(15px);
-// }
+section {
+  position: absolute;
+  top: 2em;
+  left: 0;
+  margin: auto;
+  z-index: 2;
+}

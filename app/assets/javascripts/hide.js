@@ -1,29 +1,32 @@
 const about = document.querySelector(".about");
 const intro = document.querySelector(".introduction");
-const contactButton = document.querySelector(".contactmeme")
-const contactText = document.querySelector(".contactme")
+const contactButton = document.querySelector(".contact-button");
+const contactText = document.querySelector(".contact-text");
+const creditButton = document.querySelector(".credit");
+const creditText = document.querySelector(".credit-text");
 const arrowInfo = document.querySelector(".arrow-info");
 const arrowContact = document.querySelector(".arrow-contact");
+const arrowCredit = document.querySelector(".arrow-credit");
+
+function hide(text, arrow) {
+  if (text.style.display === "none") {
+    text.style.display = "block";
+    arrow.classList.add("rightrotate");
+  }
+  else {
+   text.style.display = "none";
+   arrow.classList.remove("rightrotate");
+  }
+}
 
 about.addEventListener("click", function(){
-  if (intro.style.display === "none") {
-    intro.style.display = "block";
-    arrowInfo.classList.add("rightrotate");
-  }
-  else {
-   intro.style.display = "none";
-   arrowInfo.classList.remove("rightrotate");
-  }
-});
-
+  hide(intro, arrowInfo);
+  })
 
 contactButton.addEventListener("click", function(){
-  if (contactText.style.display === "none") {
-    contactText.style.display = "block";
-    arrowContact.classList.add("rightrotate");
-  }
-  else {
-   contactText.style.display = "none";
-   arrowContact.classList.remove("rightrotate");
-  }
-});
+  hide(contactText, arrowContact);
+  })
+
+creditButton.addEventListener("click", function(){
+  hide(creditText, arrowCredit);
+  })

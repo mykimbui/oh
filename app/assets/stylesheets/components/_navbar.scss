@@ -1,8 +1,6 @@
 .navbar-ohmy {
-  // position: absolute;
-  top: 0;
-  left: 0;
   display: inline-block;
+  z-index: 10;
   // -webkit-filter: contrast(40);
 }
 
@@ -10,16 +8,44 @@
   padding-right: 8px;
 }
 
+.lilspacetoleft {
+  padding-left: 8px;
+}
+
 .title-ohmy {
   font-size: 50px;
+}
+
+.specfont {
+  font-family: "Wremena-Light";
+  text-decoration: underline;
+}
+
+.slightbiggerfontsize {
+  font-size: 53px;
 }
 
 .introduction {
   width: 90%;
   display: none;
-  padding-bottom: 1em;
 }
 
-.contactme {
+.contact-text,
+.credit-text {
   display: none;
+  padding-top: 0.5em;
+}
+
+.link a {
+  text-decoration: none;
+  color: #333333;
+  cursor: pointer;
+  &:hover {
+    text-decoration: underline;
+    color:#333333;
+  }
+}
+
+.italic {
+  font-style: italic;
 }
