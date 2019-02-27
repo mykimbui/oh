@@ -1,16 +1,14 @@
-<section>
+<!-- <section>
   <div id="prompt"></div>
   <video></video>
-</section>
+</section> -->
 <div class="wrapper">
   <div class="menu-menu">
-    <ul>
-      <div class="fixed">
+    <ul class="fixed">
         <% @projects.each do |project| %>
         <li class="title-project"><%= project.name %><%= image_tag("arrow-up-right.svg", class:"arrow-project arrow fading") %></li>
         <li class="description-project hide"><%= project.description%></li>
         <% end %>
-      </div>
     </ul>
   </div>
 

@@ -37,11 +37,11 @@
 }
 
 .link a {
-  text-decoration: none;
+  text-decoration: underline;
   color: #333333;
   cursor: pointer;
   &:hover {
-    text-decoration: underline;
+    text-decoration: none;
     color:#333333;
   }
 }

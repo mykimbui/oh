@@ -21,6 +21,11 @@ img {
 
 .fixed {
   position: fixed;
+  width: 30%;
+
+  li {
+    width: 100%;
+  }
 }
 
 .contrast {
