@@ -1,3 +1,5 @@
+document.addEventListener("DOMContentLoaded", function(){
+
 (function() {
   var settings = {
     rainbowLength: 256,
@@ -91,5 +93,5 @@
 
 })();
 
-
+});
 

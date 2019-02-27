@@ -1,104 +1,129 @@
-// function detectSpecs() {
-//   prompt = document.querySelector('#prompt')
-//   var hasWebgl = (function() {
-//     try {
-//       return !!window.WebGLRenderingContext && !! document.createElement('canvas').getContext('experimental-webgl')
-//     } catch (e) {
-//       return false
-//     }
-//   })()
+document.addEventListener("DOMContentLoaded", function(){
 
-//   var hasGetUserMedia = (function() {
-//     return !!(navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia)
-//   })()
+const section = document.querySelector('section')
+const chromatic = document.querySelector('.chromatic')
 
-//   if (!hasGetUserMedia) {
-//     prompt.innerHTML = 'This demo requires webcam support (Chrome or Opera).'
-//   } else if (!hasWebgl) {
-//     prompt.innerHTML = 'No WebGL support detected. Please try restarting the browser.'
-//   } else {
-//     prompt.innerHTML = 'Please allow camera access.'
-//     init()
-//   }
-// }
+function detectSpecs() {
+  prompt = document.querySelector('#prompt')
+  var hasWebgl = (function() {
+    try {
+      return !!window.WebGLRenderingContext && !! document.createElement('canvas').getContext('experimental-webgl')
+    } catch (e) {
+      return false
+    }
+  })()
 
-// const vidWidth = 256
-// const vidHeight = 256
+  var hasGetUserMedia = (function() {
+    return !!(navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia)
+  })()
 
-// const renderer = new THREE.WebGLRenderer({
-//   antialias: true,
-//   alpha: true
-// })
+  if (!hasGetUserMedia) {
+    prompt.innerHTML = 'This demo requires webcam support (Chrome or Opera).'
+  } else if (!hasWebgl) {
+    prompt.innerHTML = 'No WebGL support detected. Please try restarting the browser.'
+  } else {
+    prompt.innerHTML = 'Please allow camera access.'
+    init()
+  }
+}
 
-// renderer.setSize(window.innerWidth, window.innerHeight)
-// renderer.setPixelRatio(window.devicePixelRatio)
-// renderer.setClearColor(0x000000, 0)
+const vidWidth = 256
+const vidHeight = 256
 
-// const sectionTag = document.querySelector("section")
-// sectionTag.appendChild(renderer.domElement)
+const renderer = new THREE.WebGLRenderer({
+  antialias: true,
+  alpha: true
+})
 
-// const video = document.createElement('video')
-// video.width = vidWidth
-// video.height = vidHeight
-// video.autoplay = true
-// video.loop = true
+renderer.setSize(window.innerWidth, window.innerHeight)
+renderer.setPixelRatio(window.devicePixelRatio)
+renderer.setClearColor(0x000000, 0)
 
-// window.URL = window.URL || window.webkitURL
-// navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia
-// navigator.getUserMedia({
-//   video: true
-// }, function(stream) {
-//   video.srcObject = stream
-//   prompt.style.display = 'none'
-// }, function(error) {
-//   prompt.innerHTML = 'Unable to capture WebCam. Please reload the page.'
-// })
+const sectionTag = document.querySelector("section")
+sectionTag.appendChild(renderer.domElement)
 
-// videoTexture = new THREE.Texture(video)
-// videoTexture.minFilter = THREE.LinearFilter
-// videoTexture.magFilter = THREE.LinearFilter
+const video = document.createElement('video')
+video.width = vidWidth
+video.height = vidHeight
+video.autoplay = true
+video.loop = true
 
+window.URL = window.URL || window.webkitURL
+navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia
 
-// const scene = new THREE.Scene()
+chromatic.addEventListener("click", function(){
+  if (section.style.display === "none") {
+    section.style.display = "block"
+    navigator.getUserMedia({
+      video: true,
+      audio: false
+    }, function(stream) {
+      video.srcObject = stream
+      prompt.style.display = 'none'
+    }, function(error) {
+      prompt.innerHTML = 'Unable to capture WebCam. Please reload the page.'
+    })
+    setTimeout(function(){
+      section.style.display = "none";
+      video.getTracks().map(function (stream) {
+        stream.stop();
+      });
+    }, 5000);
+  }
+  else {
+    section.style.display = "none"
+    navigator.getUserMedia({
+      video: false
+    })
+  }
+})
 
-// const ambientLight = new THREE.AmbientLight(0x777777)
-// scene.add(ambientLight)
+videoTexture = new THREE.Texture(video)
+videoTexture.minFilter = THREE.LinearFilter
+videoTexture.magFilter = THREE.LinearFilter
 
-// const pointLight = new THREE.PointLight(0xFFFFFF, 1, 0)
-// pointLight.position.set(500,500,-2000)
-// scene.add(pointLight)
+const scene = new THREE.Scene()
 
-// const camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.1, 10000)
-// camera.position.z = -3000
+const ambientLight = new THREE.AmbientLight(0x777777)
+scene.add(ambientLight)
 
-// const ball = function() {
-//   const geometry = new THREE.SphereGeometry(600, 128, 120)
-//   const material = new THREE.MeshLambertMaterial({
-//     map : videoTexture
-//   })
+const pointLight = new THREE.PointLight(0xFFFFFF, 1, 0)
+pointLight.position.set(500,500,-2000)
+scene.add(pointLight)
 
-//   const mesh = new THREE.Mesh(geometry, material)
-//   scene.add(mesh)
-//   return mesh
-// }
+const camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.1, 10000)
+camera.position.z = -3000
 
-// const sphere = ball()
+const ball = function() {
+  const geometry = new THREE.SphereGeometry(600, 128, 120)
+  const material = new THREE.MeshLambertMaterial({
+    map : videoTexture
+  })
 
-// const animate = function() {
-//   camera.lookAt(scene.position)
-//   if (video.readyState === video.HAVE_ENOUGH_DATA) {
-//     videoTexture.needsUpdate = true
-//   }  requestAnimationFrame(animate)
-//   // sphere.position.x += 0.001
-//   // sphere.position.y += 1
-//   // sphere.position.z += 1
-//   renderer.render(scene, camera)
-// }
+  const mesh = new THREE.Mesh(geometry, material)
+  scene.add(mesh)
+  return mesh
+}
 
-// animate()
+const sphere = ball()
 
-// window.addEventListener("resize", function() {
-//   camera.aspect = window.innerWidth/innerHeight
-//   camera.updateProjectionMatrix()
-//   renderer.setSize(window.innerWidth, window.innerHeight)
-// })
+const animate = function() {
+  camera.lookAt(scene.position)
+  if (video.readyState === video.HAVE_ENOUGH_DATA) {
+    videoTexture.needsUpdate = true
+  }  requestAnimationFrame(animate)
+  // sphere.position.x += 0.001
+  // sphere.position.y += 1
+  // sphere.position.z += 1
+  renderer.render(scene, camera)
+}
+
+animate()
+
+window.addEventListener("resize", function() {
+  camera.aspect = window.innerWidth/innerHeight
+  camera.updateProjectionMatrix()
+  renderer.setSize(window.innerWidth, window.innerHeight)
+})
+
+});

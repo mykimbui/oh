@@ -1,3 +1,5 @@
+document.addEventListener("DOMContentLoaded", function(){
+
 const imagesFist = document.querySelectorAll(".project-image-first")
 const projectImageContainers = document.querySelectorAll(".projectbg")
 // const imagesList = document.querySelector(".data-images").dataset.images.split(",")
@@ -49,6 +51,6 @@ projectImageContainers.forEach(function(projectImageContainer) {
 //   event.preventDefault()
 //   placeImage(event.pageX, event.pageY)
 // })
-
+});
 
 

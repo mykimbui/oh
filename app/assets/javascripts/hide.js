@@ -1,3 +1,5 @@
+document.addEventListener("DOMContentLoaded", function(){
+
 const about = document.querySelector(".about")
 const intro = document.querySelector(".introduction")
 const contactButton = document.querySelector(".contact-button")
@@ -44,3 +46,5 @@ window.addEventListener("scroll", function() {
   scrollme(contactText, arrowContact)
   scrollme(creditText, arrowCredit)
 })
+
+});
