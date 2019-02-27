@@ -1,0 +1,9 @@
+.chromatic {
+  font-size: 22px;
+  color: white;
+  transition: text-shadow 2s ease;
+  text-shadow:  0 0 2px white,
+                0 0 1px $chroma-blend,
+                $chroma-shift 0 $chroma-blur rgba($chroma-right,.9),
+                -$chroma-shift 0 $chroma-blur rgba($chroma-left,.9);
+}

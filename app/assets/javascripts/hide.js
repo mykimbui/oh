@@ -1,32 +1,46 @@
-const about = document.querySelector(".about");
-const intro = document.querySelector(".introduction");
-const contactButton = document.querySelector(".contact-button");
-const contactText = document.querySelector(".contact-text");
-const creditButton = document.querySelector(".credit");
-const creditText = document.querySelector(".credit-text");
-const arrowInfo = document.querySelector(".arrow-info");
-const arrowContact = document.querySelector(".arrow-contact");
-const arrowCredit = document.querySelector(".arrow-credit");
+const about = document.querySelector(".about")
+const intro = document.querySelector(".introduction")
+const contactButton = document.querySelector(".contact-button")
+const contactText = document.querySelector(".contact-text")
+const creditButton = document.querySelector(".credit")
+const creditText = document.querySelector(".credit-text")
+const arrowInfo = document.querySelector(".arrow-info")
+const arrowContact = document.querySelector(".arrow-contact")
+const arrowCredit = document.querySelector(".arrow-credit")
 
 function hide(text, arrow) {
   if (text.style.display === "none") {
-    text.style.display = "block";
-    arrow.classList.add("rightrotate");
+    text.style.display = "block"
+    arrow.classList.add("rightrotate")
   }
   else {
-   text.style.display = "none";
-   arrow.classList.remove("rightrotate");
-  }
+   text.style.display = "none"
+   arrow.classList.remove("rightrotate")
+ }
 }
 
 about.addEventListener("click", function(){
-  hide(intro, arrowInfo);
-  })
+  hide(intro, arrowInfo)
+})
 
 contactButton.addEventListener("click", function(){
-  hide(contactText, arrowContact);
-  })
+  hide(contactText, arrowContact)
+})
 
 creditButton.addEventListener("click", function(){
-  hide(creditText, arrowCredit);
-  })
+  hide(creditText, arrowCredit)
+})
+
+function scrollme(item, arrow) {
+  if (window.pageYOffset > 285) {
+    item.style.display = "none"
+    // window.scrollTo(0, 100)
+    arrow.classList.remove("rightrotate")
+  }
+}
+
+window.addEventListener("scroll", function() {
+  scrollme(intro, arrowInfo)
+  scrollme(contactText, arrowContact)
+  scrollme(creditText, arrowCredit)
+})

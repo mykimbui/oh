@@ -13,8 +13,8 @@
   </div>
 
   <div class="projects">
-<!--     <div class="cursor"></div>
--->    <ul>
+     <div class="cursor"></div>
+    <ul>
   <% @projects.each do |project| %>
   <div class="projectbg" style="background-color: <%= project.background %>;">
     <%= image_tag(project.pictures.first.url, class:"project-image-first") %>
