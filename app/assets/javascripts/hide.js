@@ -34,7 +34,7 @@ creditButton.addEventListener("click", function(){
 })
 
 function scrollme(item, arrow) {
-  if (window.pageYOffset > 285) {
+  if (window.pageYOffset > 400) {
     item.style.display = "none"
     // window.scrollTo(0, 100)
     arrow.classList.remove("rightrotate")

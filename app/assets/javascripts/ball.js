@@ -1,129 +1,127 @@
 document.addEventListener("DOMContentLoaded", function(){
 
-const section = document.querySelector('section')
-const chromatic = document.querySelector('.chromatic')
+  const section = document.querySelector('section')
+  const chromatic = document.querySelector('.chromatic')
 
-function detectSpecs() {
-  prompt = document.querySelector('#prompt')
-  var hasWebgl = (function() {
-    try {
-      return !!window.WebGLRenderingContext && !! document.createElement('canvas').getContext('experimental-webgl')
-    } catch (e) {
-      return false
-    }
-  })()
+  chromatic.addEventListener("click", function(){
+    if (section.style.display === "none") {
+      section.style.display = "block"
 
-  var hasGetUserMedia = (function() {
-    return !!(navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia)
-  })()
+      function detectSpecs() {
+        const prompt = document.querySelector('#prompt')
+        var hasWebgl = (function() {
+          try {
+            return !!window.WebGLRenderingContext && !! document.createElement('canvas').getContext('experimental-webgl')
+          } catch (e) {
+            return false
+          }
+        })()
 
-  if (!hasGetUserMedia) {
-    prompt.innerHTML = 'This demo requires webcam support (Chrome or Opera).'
-  } else if (!hasWebgl) {
-    prompt.innerHTML = 'No WebGL support detected. Please try restarting the browser.'
-  } else {
-    prompt.innerHTML = 'Please allow camera access.'
-    init()
-  }
-}
+        var hasGetUserMedia = (function() {
+          return !!(navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia)
+        })()
 
-const vidWidth = 256
-const vidHeight = 256
+        if (!hasGetUserMedia) {
+          prompt.innerHTML = 'This demo requires webcam support (Firefox, Chrome or Opera).'
+        } else if (!hasWebgl) {
+          prompt.innerHTML = 'No WebGL support detected. Please try restarting the browser.'
+        } else {
+          prompt.innerHTML = 'Please allow camera access.'
+          init()
+        }
+      }
 
-const renderer = new THREE.WebGLRenderer({
-  antialias: true,
-  alpha: true
-})
+      const vidWidth = 256
+      const vidHeight = 256
 
-renderer.setSize(window.innerWidth, window.innerHeight)
-renderer.setPixelRatio(window.devicePixelRatio)
-renderer.setClearColor(0x000000, 0)
+      const renderer = new THREE.WebGLRenderer({
+        antialias: true,
+        alpha: true
+      })
 
-const sectionTag = document.querySelector("section")
-sectionTag.appendChild(renderer.domElement)
+      renderer.setSize(window.innerWidth, window.innerHeight)
+      renderer.setPixelRatio(window.devicePixelRatio)
+      renderer.setClearColor(0x000000, 0)
 
-const video = document.createElement('video')
-video.width = vidWidth
-video.height = vidHeight
-video.autoplay = true
-video.loop = true
+      const sectionTag = document.querySelector("section")
+      sectionTag.appendChild(renderer.domElement)
 
-window.URL = window.URL || window.webkitURL
-navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia
+      const video = document.createElement('video')
+      video.width = vidWidth
+      video.height = vidHeight
+      video.autoplay = true
+      video.loop = true
 
-chromatic.addEventListener("click", function(){
-  if (section.style.display === "none") {
-    section.style.display = "block"
-    navigator.getUserMedia({
-      video: true,
-      audio: false
-    }, function(stream) {
-      video.srcObject = stream
-      prompt.style.display = 'none'
-    }, function(error) {
-      prompt.innerHTML = 'Unable to capture WebCam. Please reload the page.'
-    })
-    setTimeout(function(){
-      section.style.display = "none";
-      video.getTracks().map(function (stream) {
-        stream.stop();
-      });
-    }, 5000);
-  }
-  else {
-    section.style.display = "none"
-    navigator.getUserMedia({
-      video: false
-    })
-  }
-})
+      window.URL = window.URL || window.webkitURL
+      navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia
 
-videoTexture = new THREE.Texture(video)
-videoTexture.minFilter = THREE.LinearFilter
-videoTexture.magFilter = THREE.LinearFilter
+      navigator.getUserMedia({
+        video: true,
+        audio: false
+      }, function(stream) {
+        video.srcObject = stream
+        prompt.style.display = 'none'
+      }, function(error) {
+        prompt.innerHTML = 'Unable to capture WebCam. Please reload the page.'
+      })
 
-const scene = new THREE.Scene()
+      videoTexture = new THREE.Texture(video)
+      videoTexture.minFilter = THREE.LinearFilter
+      videoTexture.magFilter = THREE.LinearFilter
 
-const ambientLight = new THREE.AmbientLight(0x777777)
-scene.add(ambientLight)
+      const scene = new THREE.Scene()
 
-const pointLight = new THREE.PointLight(0xFFFFFF, 1, 0)
-pointLight.position.set(500,500,-2000)
-scene.add(pointLight)
+      const ambientLight = new THREE.AmbientLight(0x777777)
+      scene.add(ambientLight)
 
-const camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.1, 10000)
-camera.position.z = -3000
+      const pointLight = new THREE.PointLight(0xFFFFFF, 1, 0)
+      pointLight.position.set(500,500,-2000)
+      scene.add(pointLight)
 
-const ball = function() {
-  const geometry = new THREE.SphereGeometry(600, 128, 120)
-  const material = new THREE.MeshLambertMaterial({
-    map : videoTexture
-  })
+      const camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.1, 10000)
+      camera.position.z = -3000
 
-  const mesh = new THREE.Mesh(geometry, material)
-  scene.add(mesh)
-  return mesh
-}
+      const ball = function() {
+        const geometry = new THREE.SphereGeometry(600, 128, 120)
+        const material = new THREE.MeshLambertMaterial({
+          map : videoTexture
+        })
 
-const sphere = ball()
+        const mesh = new THREE.Mesh(geometry, material)
+        scene.add(mesh)
+        return mesh
+      }
 
-const animate = function() {
-  camera.lookAt(scene.position)
-  if (video.readyState === video.HAVE_ENOUGH_DATA) {
-    videoTexture.needsUpdate = true
-  }  requestAnimationFrame(animate)
-  // sphere.position.x += 0.001
-  // sphere.position.y += 1
-  // sphere.position.z += 1
-  renderer.render(scene, camera)
-}
+      const sphere = ball()
 
-animate()
+      const animate = function() {
+        camera.lookAt(scene.position)
+        if (video.readyState === video.HAVE_ENOUGH_DATA) {
+          videoTexture.needsUpdate = true
+        }  requestAnimationFrame(animate)
+        // sphere.position.x += 0.001
+        // sphere.position.y += 1
+        // sphere.position.z += 1
+        renderer.render(scene, camera)
+      }
 
-window.addEventListener("resize", function() {
-  camera.aspect = window.innerWidth/innerHeight
-  camera.updateProjectionMatrix()
-  renderer.setSize(window.innerWidth, window.innerHeight)
-})
+      animate()
 
+      window.addEventListener("resize", function() {
+        camera.aspect = window.innerWidth/innerHeight
+        camera.updateProjectionMatrix()
+        renderer.setSize(window.innerWidth, window.innerHeight)
+      })
+
+      setTimeout(function(){
+        section.style.display = "none";
+        video.srcObject.getTracks().forEach(function (stream) {
+          stream.stop();
+        });
+      }, 15000);
+      }
+      else {
+        section.style.display = "none"
+      }
+      })
 });

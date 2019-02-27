@@ -6,6 +6,9 @@ document.addEventListener("DOMContentLoaded", function(){
   drawingButton.addEventListener('click', function() {
     if (drawingImage.style.display === "none") {
       drawingImage.style.display = "block";
+      setTimeout(function(){
+      drawingImage.style.display = "none";
+      }, 4000);
     }
     else {
      drawingImage.style.display = "none";

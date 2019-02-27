@@ -12,7 +12,7 @@
   margin-right: auto;
   width: 20em;
   display: none;
-  animation: feather 3s ease-in 1;
+  animation: feather 4s ease-in 1;
   transition-timing-function: cubic-bezier(0, 0, 1, 1);
   animation-direction: alternate;
   animation-fill-mode: forwards;
@@ -22,18 +22,15 @@
 @keyframes feather {
   0% {
     transform: rotate(-60deg) translateY(-50%);
-    opacity: 1;
-    display: block;
   }
   50% {
-    transform: rotate(-20deg) translateY(30%);
-    opacity: 1;
-    display: block
+    transform: rotate(-20deg) translateY(50%);
+  }
+  65% {
+    transform: rotate(-20deg) translateY(50%);
   }
   100% {
-    transform: rotate(20deg) translateY(100%);
-    display: none;
-    opacity: 0;
+    transform: rotate(-60deg) translateY(-50%);
   }
 }
 
