@@ -17,7 +17,7 @@
     <ul>
   <% @projects.each do |project| %>
   <div class="projectbg" style="background-color: <%= project.background %>;">
-    <%= image_tag(project.pictures.first.url, class:"project-image-first") %>
+    <%= image_tag(project.pictures.first.url, class:"project-image-first clickcursor") %>
     <div data-images="<%= project.pictures.pluck(:url) %>" class="data-images"></div>
           <!-- <div class="image-containers">
             <%# project.pictures.each do |picture| %>

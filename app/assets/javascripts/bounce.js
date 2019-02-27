@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
       const newClick = document.createElement('div');
       newClick.className = 'clickme';
       newClick.innerHTML = 'click me';
-      newClick.style.color = 'black';
+      newClick.style.color = 'white';
       newClick.style.fontSize = '20px';
       newClick.style.fontFamily = 'SpaceGrotesk-Regular';
       newClick.style.position = 'absolute';
@@ -77,22 +77,4 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 // document.getElementById("target").addEventListener('click', fadeOutEffect);
 
-
-// $( ".dollar" ).keypress(function makeDiv(){
-//   $newdiv = $('<div/>').text("💸");
-
-//   var posx = Math.random() * $('.dollar-box').width().toFixed();
-//   var posy = Math.random() * $('.dollar-box').height().toFixed();
-
-//   $newdiv.css({
-//     'position':'absolute',
-//     'font-size': '40px',
-//     'left':posx+'px',
-//     'top':posy+'px',
-//     'display':'none'
-//   }).appendTo( '.dollar-box' ).fadeIn(1000).fadeOut(4000, function(){
-//    $(this).remove();
-//      // makeDiv();
-//    });
-// })();
 
