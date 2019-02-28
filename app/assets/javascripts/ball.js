@@ -93,17 +93,36 @@ document.addEventListener("DOMContentLoaded", function(){
       }
 
       const sphere = ball()
+      sphere.position.y = 650
+
+      // const update = function() {
+      //   const time = performance.now() * 0.001;
+      //   var k = 3;
+      //   for (var b = 0; b < sphere.geometry.vertices.length; b++) {
+      //     var p = sphere.geometry.vertices[b];
+      //     p.normalize().multiplyScalar(1 + 0.3 * noise.perlin3(p.x * k + time, p.y * k, p.z * k));
+      //   }
+      //   sphere.geometry.computeVertexNormals();
+      //   sphere.geometry.normalsNeedUpdate = true;
+      //   sphere.geometry.verticesNeedUpdate = true;
+      // }
 
       const animate = function() {
         camera.lookAt(scene.position)
         if (video.readyState === video.HAVE_ENOUGH_DATA) {
           videoTexture.needsUpdate = true
-        }  requestAnimationFrame(animate)
+        }
+        requestAnimationFrame(animate)
+        // update()
+        sphere.rotation.x += 0.01;
+        sphere.rotation.y += 0.01;
         // sphere.position.x += 0.001
         // sphere.position.y += 1
         // sphere.position.z += 1
         renderer.render(scene, camera)
       }
+
+
 
       animate()
 
@@ -114,14 +133,14 @@ document.addEventListener("DOMContentLoaded", function(){
       })
 
       setTimeout(function(){
-        section.style.display = "none";
-        video.srcObject.getTracks().forEach(function (stream) {
-          stream.stop();
-        });
-      }, 15000);
-      }
-      else {
         section.style.display = "none"
-      }
-      })
-});
+        video.srcObject.getTracks().forEach(function (stream) {
+          stream.stop()
+        })
+      }, 15000)
+    }
+    else {
+      section.style.display = "none"
+    }
+  })
+})
