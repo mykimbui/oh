@@ -2,13 +2,15 @@ document.addEventListener("DOMContentLoaded", function(){
 
   const section = document.querySelector('section')
   const chromatic = document.querySelector('.chromatic')
+  const prompt = document.querySelector('#prompt')
+  const innerPrompt = document.querySelector('#innerprompt')
 
   chromatic.addEventListener("click", function(){
     if (section.style.display === "none") {
       section.style.display = "block"
 
       function detectSpecs() {
-        const prompt = document.querySelector('#prompt')
+
         var hasWebgl = (function() {
           try {
             return !!window.WebGLRenderingContext && !! document.createElement('canvas').getContext('experimental-webgl')
@@ -22,11 +24,14 @@ document.addEventListener("DOMContentLoaded", function(){
         })()
 
         if (!hasGetUserMedia) {
-          prompt.innerHTML = 'This demo requires webcam support (Firefox, Chrome or Opera).'
+          prompt.style.display = 'block'
+          innerPrompt.innerHTML = 'This demo requires webcam support (Firefox, Chrome or Opera).'
         } else if (!hasWebgl) {
-          prompt.innerHTML = 'No WebGL support detected. Please try restarting the browser.'
+          prompt.style.display = 'block'
+          innerPrompt.innerHTML = 'No WebGL support detected. Please try restarting the browser.'
         } else {
-          prompt.innerHTML = 'Please allow camera access.'
+          prompt.style.display = 'block'
+          innerPrompt.innerHTML = 'Please allow camera access.'
           init()
         }
       }
@@ -62,7 +67,8 @@ document.addEventListener("DOMContentLoaded", function(){
         video.srcObject = stream
         prompt.style.display = 'none'
       }, function(error) {
-        prompt.innerHTML = 'Unable to capture WebCam. Please reload the page.'
+        prompt.style.display = 'block'
+        innerPrompt.innerHTML = 'Unable to capture WebCam. Please reload the page.'
       })
 
       videoTexture = new THREE.Texture(video)
