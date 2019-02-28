@@ -1,0 +1,9 @@
+title {
+  animation: scroll 20s linear infinite;
+}
+
+@keyframes scroll {
+  to {
+    transform: translateX( -100%);
+  }
+}
