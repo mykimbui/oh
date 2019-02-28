@@ -1,3 +1,5 @@
+document.addEventListener("DOMContentLoaded", function(){
+
 const titleProject = document.querySelectorAll(".title-project");
 const descriptionProject = document.querySelectorAll(".description-project");
 const projectBg = document.querySelectorAll(".projectbg");
@@ -28,3 +30,4 @@ window.addEventListener('scroll', function (event) {
   }
 }, false);
 
+});

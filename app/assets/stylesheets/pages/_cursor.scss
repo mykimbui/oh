@@ -10,24 +10,20 @@ div.cursor {
   transition: width 0.25s, height 0.25s;
   z-index: 10;
   -webkit-filter: blur(10px);
+  pointer-events: none;
 }
 
 div.cursor.is-down {
   width: 20px;
   height: 20px;
   -webkit-filter: blur(8px);
+  pointer-events: none;
 }
 
-// .clickcursor {
-//   cursor: url("ohmy-clickme.png"), auto !important;
-// }
+.clickcursor {
+  cursor: url("ohmy-click.png"), auto !important;
+}
 
-
-// .clickme {
-//   position: absolute;
-//   font-size: 40px;
-//   display: none ;
-// }
 .pointer {
   cursor: pointer;
 }
