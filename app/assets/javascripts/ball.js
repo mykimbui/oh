@@ -87,6 +87,14 @@ document.addEventListener("DOMContentLoaded", function(){
       const camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.1, 10000)
       camera.position.z = -3000
 
+      const edge = [window.innerWidth, window.innerHeight, 1000]
+      const speed = Math.random() * 5 + 5
+      const direction = [
+      Math.round(Math.random()) == 1 ? 1 : -1,
+      Math.round(Math.random()) == 1 ? 1 : -1,
+      Math.round(Math.random()) == 1 ? 1 : -1
+      ]
+
       const ball = function() {
         const geometry = new THREE.SphereGeometry(600, 128, 120)
         const material = new THREE.MeshLambertMaterial({
@@ -101,8 +109,23 @@ document.addEventListener("DOMContentLoaded", function(){
       const sphere = ball()
       sphere.position.y = 650
 
-      // const update = function() {
-      //   const time = performance.now() * 0.001;
+      const updatePosition = function() {
+        sphere.position.x += direction[0] * speed
+        sphere.position.y += direction[1] * speed
+        sphere.position.z += direction[2] * speed
+      }
+
+      const updateDirection = function() {
+        if (Math.abs(sphere.position.x) > edge[0])
+          direction[0] = -direction[0]
+        if (Math.abs(sphere.position.y) > edge[1])
+          direction[1] = -direction[1]
+        if (Math.abs(sphere.position.z) > edge[2])
+          direction[2] = -direction[2]
+      }
+
+      // const updateShader = function() {
+      //   const time = performance.now() * 0.001
       //   var k = 3;
       //   for (var b = 0; b < sphere.geometry.vertices.length; b++) {
       //     var p = sphere.geometry.vertices[b];
@@ -119,16 +142,13 @@ document.addEventListener("DOMContentLoaded", function(){
           videoTexture.needsUpdate = true
         }
         requestAnimationFrame(animate)
-        // update()
-        sphere.rotation.x += 0.01;
-        sphere.rotation.y += 0.01;
-        // sphere.position.x += 0.001
-        // sphere.position.y += 1
-        // sphere.position.z += 1
+        // updateShader()
+        updatePosition()
+        updateDirection()
+        sphere.rotation.x += 0.01
+        sphere.rotation.y += 0.01
         renderer.render(scene, camera)
       }
-
-
 
       animate()
 

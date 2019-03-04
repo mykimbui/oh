@@ -1,16 +1,15 @@
 <div id="prompt">
   <div id="innerprompt">hello</div>
 </div>
-
-<section class="fading" style="display: none;">
-  <video></video>
-</section>
+  <section class="fading" style="display: none;">
+    <video></video>
+  </section>
 <div class="wrapper">
   <div class="menu-menu">
     <ul class="fixed">
         <% @projects.each do |project| %>
         <li class="title-project"><%= project.name %><%= image_tag("arrow-up-right.svg", class:"arrow-project arrow fading") %></li>
-        <li class="description-project hide"><%= project.description%></li>
+        <li class="description-project hide fade-in"><%= project.description%></li>
         <% end %>
     </ul>
   </div>

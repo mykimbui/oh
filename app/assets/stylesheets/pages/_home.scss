@@ -23,7 +23,6 @@ img {
 .fixed {
   position: fixed;
   width: 30%;
-
   li {
     width: 100%;
   }
@@ -35,6 +34,10 @@ img {
 
 canvas {
   vertical-align: bottom;
+}
+
+video {
+  position: absolute;
 }
 
 section {
