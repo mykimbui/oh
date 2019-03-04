@@ -1,4 +1,3 @@
-
 document.addEventListener("DOMContentLoaded", function(event) {
   const projectImage = document.querySelectorAll(".clickcursor");
 

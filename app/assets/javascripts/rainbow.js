@@ -1,97 +1,102 @@
 document.addEventListener("DOMContentLoaded", function(){
 
-(function() {
-  var settings = {
-    rainbowLength: 256,
-    rainbowClass: 'rainbow',
-    delay: 60,
-    repeat: true
-  };
+  const drawingButton = document.querySelector('.drawing')
 
-  var Δ = {
-    rainbow: makeMeARainbow(settings.rainbowLength),
-    init: function() {
-      var sourceElement = document.querySelector('.' + settings.rainbowClass);
+  drawingButton.addEventListener('mouseover', function() {
 
-      this.element = this.dissectText(sourceElement);
-      sourceElement.parentNode.insertBefore(this.element, sourceElement);
-      sourceElement.remove();
-
-      this.update(this.draw(this.element));
-
-      return this;
-    },
-    draw: function(el) {
-      if (!el) return;
-      var _self = this;
-
-      var spans = el.querySelectorAll('span');
-      [].forEach.call(spans, function(v, k, c) {
-        v.style.color = _self.rainbow[k % _self.rainbow.length];
-        v.style.position = 'relative';
-      });
-
-      return spans;
-    },
-    dissectText: function(sourceEl) {
-      var textSource = sourceEl.textContent,
-      headingContainer = document.createElement('span');
-
-      textSource.split('').forEach(function(v, k, c) {
-        var span = document.createElement('span'),
-        destText = document.createTextNode(v);
-
-        span.appendChild(destText);
-        headingContainer.appendChild(span);
-      });
-
-      headingContainer.className = settings.rainbowClass;
-
-      return headingContainer;
-    },
-    update: function(spans) {
-      if (!spans) return;
-      var _self = this,
-      delay = settings.delay,
-      tI = _self.totalIterations = 0;
-
-      _self.updater && window.clearTimeout(_self.updater);
-      _self.updater = window.setTimeout(animateText.bind(_self, spans), delay);
-
-      function animateText(spans) {
-        ++tI;
-
-        [].forEach.call(spans, function(v, k) {
-          v.style.color = _self.rainbow[(tI + k) % _self.rainbow.length];
-          v.style.top = Math.sin((tI + k) / 2) * 2 + 'px';
-          v.style.fontSize = '22px';
-          v.style.cursor = 'pointer';
-        });
-
-        if (settings.repeat) _self.updater = window.setTimeout(animateText.bind(_self, spans), delay);
+    (function() {
+      var settings = {
+        rainbowLength: 256,
+        rainbowClass: 'rainbow',
+        delay: 60,
+        repeat: true
       };
 
-      return _self.updater;
-    }
-  }.init();
+      var Δ = {
+        rainbow: makeMeARainbow(settings.rainbowLength),
+        init: function() {
+          var sourceElement = document.querySelector('.' + settings.rainbowClass);
 
-  function makeMeARainbow(length) {
-    var length = length || 64;
+          this.element = this.dissectText(sourceElement);
+          sourceElement.parentNode.insertBefore(this.element, sourceElement);
+          sourceElement.remove();
 
-    return (function generateRainbow(arr, amount) {
-      if (--amount < 0 ) return arr;
-      arr.push(generateColor( ((length - (amount+1)) % length) , length, 8));
-      return generateRainbow(arr, amount);
-    })([], length);
+          this.update(this.draw(this.element));
+
+          return this;
+        },
+        draw: function(el) {
+          if (!el) return;
+          var _self = this;
+
+          var spans = el.querySelectorAll('span');
+          [].forEach.call(spans, function(v, k, c) {
+            v.style.color = _self.rainbow[k % _self.rainbow.length];
+            v.style.position = 'relative';
+          });
+
+          return spans;
+        },
+        dissectText: function(sourceEl) {
+          var textSource = sourceEl.textContent,
+          headingContainer = document.createElement('span');
+
+          textSource.split('').forEach(function(v, k, c) {
+            var span = document.createElement('span'),
+            destText = document.createTextNode(v);
+
+            span.appendChild(destText);
+            headingContainer.appendChild(span);
+          });
+
+          headingContainer.className = settings.rainbowClass;
+
+          return headingContainer;
+        },
+        update: function(spans) {
+          if (!spans) return;
+          var _self = this,
+          delay = settings.delay,
+          tI = _self.totalIterations = 0;
+
+          _self.updater && window.clearTimeout(_self.updater);
+          _self.updater = window.setTimeout(animateText.bind(_self, spans), delay);
+
+          function animateText(spans) {
+            ++tI;
+
+            [].forEach.call(spans, function(v, k) {
+              v.style.color = _self.rainbow[(tI + k) % _self.rainbow.length];
+              v.style.top = Math.sin((tI + k) / 2) * 2 + 'px';
+              v.style.fontSize = '22px';
+              v.style.cursor = 'pointer';
+            });
+
+            if (settings.repeat) _self.updater = window.setTimeout(animateText.bind(_self, spans), delay);
+          };
+
+          return _self.updater;
+        }
+      }.init();
+
+      function makeMeARainbow(length) {
+        var length = length || 64;
+
+        return (function generateRainbow(arr, amount) {
+          if (--amount < 0 ) return arr;
+          arr.push(generateColor( ((length - (amount+1)) % length) , length, 8));
+          return generateRainbow(arr, amount);
+        })([], length);
 
 
 
-    function generateColor(amount, total, multiplier) {
-      return 'hsla\(' + ((amount * multiplier) * (360 / total)) + ',100%,60%,0.90\)'
-    }
-  }
+        function generateColor(amount, total, multiplier) {
+          return 'hsla\(' + ((amount * multiplier) * (360 / total)) + ',100%,60%,0.90\)'
+        }
+      }
 
-})();
+    })();
+  })
 
 });
 

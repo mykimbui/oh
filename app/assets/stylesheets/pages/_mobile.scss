@@ -1,0 +1,43 @@
+@media only screen and (max-width: 800px) {
+
+  .navbar-ohmy {
+    font-size: 25px;
+    .introduction {
+      font-size: 18px;
+    }
+    .contact-text {
+      font-size: 18px;
+    }
+    .credit-text {
+      font-size: 18px;
+    }
+  }
+
+  .mobile-view {
+    padding-top: 15px;
+    padding-left: 10px;
+    line-height: 30px;
+  }
+
+  .biggerarrow {
+    width: 25px;
+  }
+
+  .wrapper {
+    display: grid;
+    grid-template-columns: 100%;
+  }
+
+  .menu-menu {
+    display: none;
+  }
+
+  ul {
+    padding-left: 0;
+  }
+
+  .projectbg {
+    padding: 0.5em;
+  }
+
+}
