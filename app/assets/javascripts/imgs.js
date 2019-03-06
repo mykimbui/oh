@@ -15,7 +15,9 @@ function placeImage(x,y, imagesList) {
     img.style.position = 'absolute'
     img.style.left = x + 'px'
     img.style.top = y + 'px'
-    img.style.transform = 'translate(-50%, -50%) scale(0.5)'
+    img.style.transform = 'translate(-50%, -50%) scale(0.7)'
+    img.style.pointerEvents = 'none'
+    img.style.objectFit = 'contain'
     document.body.appendChild(img)
   }
 

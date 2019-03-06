@@ -1,29 +1,31 @@
 <div id="prompt">
   <div id="innerprompt"></div>
 </div>
-  <section class="fading" style="display: none;">
-    <video></video>
-  </section>
+<section class="fading" style="display: none;">
+  <video></video>
+</section>
 <div class="wrapper">
   <div class="menu-menu">
     <ul class="fixed">
-        <% @projects.each do |project| %>
-        <li class="title-project"><%= project.name %><%= image_tag("arrow-up-right.svg", class:"arrow-project arrow fading") %></li>
-        <li class="description-project hide fade-in"><%= project.description%></li>
-        <% end %>
+      <% @projects.each do |project| %>
+      <li class="title-project"><%= project.name %><%= image_tag("arrow-up-right.svg", class:"arrow-project arrow fading") %></li>
+      <li class="description-project hide fade-in"><%= project.description%></li>
+      <% end %>
     </ul>
   </div>
 
   <div class="projects">
-     <div class="cursor"></div>
-    <ul>
-  <% @projects.each do |project| %>
-  <div class="projectbg" style="background-color: <%= project.background %>;">
-    <%= image_tag(project.pictures.first.url, class:"project-image-first clickcursor") %>
-    <div data-images="<%= project.pictures.pluck(:url) %>" class="data-images"></div>
-        </div>
-        <% end %>
-      </ul>
+   <div class="cursor"></div>
+   <ul>
+    <% @projects.each do |project| %>
+    <div class="projectbg">
+      <div class="colorbg" style="background-color: <%= project.background %>;">
+        <%= image_tag(project.pictures.first.url, class:"project-image-first clickcursor") %>
+        <div data-images="<%= project.pictures.pluck(:url) %>" class="data-images"></div>
+      </div>
     </div>
-  </div>
+    <% end %>
+  </ul>
+</div>
+</div>
 
