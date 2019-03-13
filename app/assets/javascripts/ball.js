@@ -2,13 +2,15 @@ document.addEventListener("DOMContentLoaded", function(){
 
   const section = document.querySelector('section')
   const chromatic = document.querySelector('.chromatic')
+  const prompt = document.querySelector('#prompt')
+  const innerPrompt = document.querySelector('#innerprompt')
 
   chromatic.addEventListener("click", function(){
     if (section.style.display === "none") {
       section.style.display = "block"
 
       function detectSpecs() {
-        const prompt = document.querySelector('#prompt')
+
         var hasWebgl = (function() {
           try {
             return !!window.WebGLRenderingContext && !! document.createElement('canvas').getContext('experimental-webgl')
@@ -22,11 +24,23 @@ document.addEventListener("DOMContentLoaded", function(){
         })()
 
         if (!hasGetUserMedia) {
-          prompt.innerHTML = 'This demo requires webcam support (Firefox, Chrome or Opera).'
+          prompt.style.display = 'block'
+          innerPrompt.innerHTML = 'This demo requires webcam support (Firefox, Chrome or Opera).'
+          setTimeout(function(){
+            prompt.style.display = "none"
+          }, 2000)
         } else if (!hasWebgl) {
-          prompt.innerHTML = 'No WebGL support detected. Please try restarting the browser.'
+          prompt.style.display = 'block'
+          innerPrompt.innerHTML = 'No WebGL support detected. Please try restarting the browser.'
+          setTimeout(function(){
+            prompt.style.display = "none"
+          }, 2000)
         } else {
-          prompt.innerHTML = 'Please allow camera access.'
+          prompt.style.display = 'block'
+          innerPrompt.innerHTML = 'Please allow camera access.'
+          setTimeout(function(){
+            prompt.style.display = "none"
+          }, 2000)
           init()
         }
       }
@@ -62,7 +76,11 @@ document.addEventListener("DOMContentLoaded", function(){
         video.srcObject = stream
         prompt.style.display = 'none'
       }, function(error) {
-        prompt.innerHTML = 'Unable to capture WebCam. Please reload the page.'
+        prompt.style.display = 'block'
+        innerPrompt.innerHTML = 'Unable to capture webcam. Please allow webcam for a little surprise 📹.'
+        setTimeout(function(){
+          prompt.style.display = "none"
+        }, 2000)
       })
 
       videoTexture = new THREE.Texture(video)
@@ -93,10 +111,32 @@ document.addEventListener("DOMContentLoaded", function(){
       }
 
       const sphere = ball()
-      sphere.position.y = 650
 
-      // const update = function() {
-      //   const time = performance.now() * 0.001;
+      const edge = [window.innerWidth, window.innerHeight, 1000]
+      const speed = Math.random() * 5 + 5
+      const direction = [
+      Math.round(Math.random()) == 1 ? 1 : -1,
+      Math.round(Math.random()) == 1 ? 1 : -1,
+      Math.round(Math.random()) == 1 ? 1 : -1
+      ]
+
+      const updatePosition = function() {
+        sphere.position.x += direction[0] * speed
+        sphere.position.y += direction[1] * speed
+        sphere.position.z += direction[2] * speed
+      }
+
+      const updateDirection = function() {
+        if (Math.abs(sphere.position.x) > edge[0])
+          direction[0] = -direction[0]
+        if (Math.abs(sphere.position.y) > edge[1])
+          direction[1] = -direction[1]
+        if (Math.abs(sphere.position.z) > edge[2])
+          direction[2] = -direction[2]
+      }
+
+      // const updateShader = function() {
+      //   const time = performance.now() * 0.001
       //   var k = 3;
       //   for (var b = 0; b < sphere.geometry.vertices.length; b++) {
       //     var p = sphere.geometry.vertices[b];
@@ -113,16 +153,13 @@ document.addEventListener("DOMContentLoaded", function(){
           videoTexture.needsUpdate = true
         }
         requestAnimationFrame(animate)
-        // update()
-        sphere.rotation.x += 0.01;
-        sphere.rotation.y += 0.01;
-        // sphere.position.x += 0.001
-        // sphere.position.y += 1
-        // sphere.position.z += 1
+        // updateShader()
+        updatePosition()
+        updateDirection()
+        sphere.rotation.x += 0.01
+        sphere.rotation.y += 0.01
         renderer.render(scene, camera)
       }
-
-
 
       animate()
 

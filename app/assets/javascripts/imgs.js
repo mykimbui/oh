@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function(){
 
-const imagesFist = document.querySelectorAll(".project-image-first")
+const imagesFirst = document.querySelectorAll(".project-image-first")
 const projectImageContainers = document.querySelectorAll(".projectbg")
 // const imagesList = document.querySelector(".data-images").dataset.images.split(",")
 
@@ -15,7 +15,9 @@ function placeImage(x,y, imagesList) {
     img.style.position = 'absolute'
     img.style.left = x + 'px'
     img.style.top = y + 'px'
-    img.style.transform = 'translate(-50%, -50%) scale(0.5)'
+    img.style.transform = 'translate(-50%, -50%) scale(0.7)'
+    img.style.pointerEvents = 'none'
+    img.style.objectFit = 'contain'
     document.body.appendChild(img)
   }
 
@@ -25,11 +27,23 @@ function placeImage(x,y, imagesList) {
   }
 }
 
+// function replaceImage(imagesList, imageF) {
+//   if (imagesList[i]) {
+//     const nextImage = imagesList[i].replace(/ *"*\[*\]*/g,'')
+//     imageF.src = nextImage
+//   }
+//   i++
+//   if (i >= imagesList.length) {
+//     i = 0
+//   }
+// }
+
 projectImageContainers.forEach(function(projectImageContainer) {
   const imagesList = projectImageContainer.querySelector(".data-images").dataset.images.split(",")
   projectImageContainer.addEventListener('click', function(event) {
     event.preventDefault()
     placeImage(event.pageX, event.pageY, imagesList)
+    // replaceImage(imagesList, projectImageContainer)
   })
 })
 

@@ -1,0 +1,26 @@
+.fade-in {
+ opacity:0;
+ -webkit-animation:fadeIn ease-in 1;
+ -moz-animation:fadeIn ease-in 1;
+ animation:fadeIn ease-in 1;
+
+ -webkit-animation-fill-mode:forwards;
+ -moz-animation-fill-mode:forwards;
+ animation-fill-mode:forwards;
+
+ -webkit-animation-duration:0.3s;
+ -moz-animation-duration:0.3s;
+ animation-duration:0.3s;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity:0;
+    transform: translateY(1px);
+  }
+  100% {
+    opacity:1;
+    transform: translateY(0px);
+  }
+}
+
