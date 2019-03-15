@@ -5,7 +5,7 @@ document.addEventListener("turbolinks:load", function() {
     const projectImageContainers = document.querySelectorAll(".projectbg")
   // const imagesList = document.querySelector(".data-images").dataset.images.split(",")
   var i = 0
-  const scale = 0.5
+  const scale = 0.9
 
   function placeImage(x,y, imagesList) {
     console.log(imagesList[i], i)
