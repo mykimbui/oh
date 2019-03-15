@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", function(){
-
 const imagesFirst = document.querySelectorAll(".project-image-first")
 const projectImageContainers = document.querySelectorAll(".projectbg")
 // const imagesList = document.querySelector(".data-images").dataset.images.split(",")
