@@ -1,5 +1,6 @@
-document.addEventListener("DOMContentLoaded", function(){
-
+// document.addEventListener("DOMContentLoaded", function(){
+document.addEventListener("turbolinks:load", function() {
+  console.log('hhi')
   const drawingButton = document.querySelector('.drawing')
   const drawingImage = document.querySelector('.drawing-img')
 
@@ -14,5 +15,5 @@ document.addEventListener("DOMContentLoaded", function(){
      drawingImage.style.display = "none";
    }
  })
-
-});
+})
+// })

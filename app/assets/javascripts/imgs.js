@@ -1,12 +1,14 @@
-document.addEventListener("DOMContentLoaded", function(){
-  const imagesFirst = document.querySelectorAll(".project-image-first")
-  const projectImageContainers = document.querySelectorAll(".projectbg")
+document.addEventListener("turbolinks:load", function() {
+  console.log('It works on each visit!')
+  // document.addEventListener("DOMContentLoaded", function(){
+    const imagesFirst = document.querySelectorAll(".project-image-first")
+    const projectImageContainers = document.querySelectorAll(".projectbg")
   // const imagesList = document.querySelector(".data-images").dataset.images.split(",")
   var i = 0
   const scale = 0.5
 
   function placeImage(x,y, imagesList) {
-    // console.log(imagesList[i], i)
+    console.log(imagesList[i], i)
     if (imagesList[i]) {
       const nextImage = imagesList[i].replace(/ *"*\[*\]*/g,'')
       const img = document.createElement("img")
@@ -79,6 +81,6 @@ document.addEventListener("DOMContentLoaded", function(){
     })
   })
 
+// })
+
 })
-
-
