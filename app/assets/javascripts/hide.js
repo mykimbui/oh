@@ -1,4 +1,5 @@
-document.addEventListener("DOMContentLoaded", function(){
+// document.addEventListener("DOMContentLoaded", function(){
+document.addEventListener("turbolinks:load", function() {
 
 const about = document.querySelector(".about")
 const intro = document.querySelector(".introduction")

@@ -1,5 +1,3 @@
-console.log('bkbk')
-
 document.addEventListener("turbolinks:load", function() {
   console.log('It works on each visit!')
   // document.addEventListener("DOMContentLoaded", function(){

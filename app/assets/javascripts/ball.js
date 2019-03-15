@@ -1,4 +1,5 @@
-document.addEventListener("DOMContentLoaded", function(){
+// document.addEventListener("DOMContentLoaded", function(){
+document.addEventListener("turbolinks:load", function() {
 
   const section = document.querySelector('section')
   const chromatic = document.querySelector('.chromatic')

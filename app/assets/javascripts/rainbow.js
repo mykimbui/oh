@@ -1,4 +1,5 @@
-document.addEventListener("DOMContentLoaded", function(){
+// document.addEventListener("DOMContentLoaded", function(){
+document.addEventListener("turbolinks:load", function() {
 
   const drawingButton = document.querySelector('.drawing')
 

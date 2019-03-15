@@ -1,4 +1,6 @@
-document.addEventListener("DOMContentLoaded", function(event) {
+document.addEventListener("turbolinks:load", function() {
+
+// document.addEventListener("DOMContentLoaded", function(event) {
   const projectImage = document.querySelectorAll(".clickcursor");
 
   projectImage.forEach(function (item) {
