@@ -5,6 +5,7 @@ document.addEventListener("turbolinks:load", function() {
   const drawingImage = document.querySelector('.drawing-img')
 
   drawingButton.addEventListener('click', function() {
+    // event.preventDefault()
     if (drawingImage.style.display === "none") {
       drawingImage.style.display = "block";
       setTimeout(function(){

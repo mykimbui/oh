@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", function(){
   const innerPrompt = document.querySelector('#innerprompt')
 
   chromatic.addEventListener("click", function(){
+    // event.preventDefault()
     if (section.style.display === "none") {
       section.style.display = "block"
 
