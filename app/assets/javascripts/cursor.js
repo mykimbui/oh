@@ -20,7 +20,6 @@ document.addEventListener("turbolinks:load", function() {
   }
 
   document.addEventListener("mousedown", function (event) {
-    console.log('im down')
     isMouseDown = true;
     growCursor();
   })
