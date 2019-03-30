@@ -1,9 +1,11 @@
-document.addEventListener("DOMContentLoaded", function(){
+// document.addEventListener("DOMContentLoaded", function(){
+document.addEventListener("turbolinks:load", function() {
 
   const drawingButton = document.querySelector('.drawing')
   const drawingImage = document.querySelector('.drawing-img')
 
   drawingButton.addEventListener('click', function() {
+    // event.preventDefault()
     if (drawingImage.style.display === "none") {
       drawingImage.style.display = "block";
       setTimeout(function(){
@@ -14,5 +16,5 @@ document.addEventListener("DOMContentLoaded", function(){
      drawingImage.style.display = "none";
    }
  })
-
-});
+})
+// })

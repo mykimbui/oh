@@ -1,4 +1,6 @@
-document.addEventListener("DOMContentLoaded", function(event) {
+// document.addEventListener("DOMContentLoaded", function(event) {
+document.addEventListener("turbolinks:load", function() {
+
   const bodyTag = document.querySelector("body");
   const cursor = document.querySelector("div.cursor");
 
