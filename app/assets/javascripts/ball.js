@@ -1,4 +1,5 @@
-document.addEventListener("DOMContentLoaded", function(){
+// document.addEventListener("DOMContentLoaded", function(){
+document.addEventListener("turbolinks:load", function() {
 
   const section = document.querySelector('section')
   const chromatic = document.querySelector('.chromatic')
@@ -6,6 +7,7 @@ document.addEventListener("DOMContentLoaded", function(){
   const innerPrompt = document.querySelector('#innerprompt')
 
   chromatic.addEventListener("click", function(){
+    // event.preventDefault()
     if (section.style.display === "none") {
       section.style.display = "block"
 
