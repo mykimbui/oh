@@ -1,5 +1,5 @@
 // document.addEventListener("DOMContentLoaded", function(){
-document.addEventListener("turbolinks:load", function() {
+document.addEventListener("DOMContentLoaded", function() {
 
   const drawingButton = document.querySelector('.drawing')
   const drawingImage = document.querySelector('.drawing-img')

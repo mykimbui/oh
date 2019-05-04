@@ -1,29 +1,6 @@
-// <<<<<<< HEAD
-// document.addEventListener("DOMContentLoaded", function(){
-// const imagesFirst = document.querySelectorAll(".project-image-first")
-// const projectImageContainers = document.querySelectorAll(".projectbg")
-// // const imagesList = document.querySelector(".data-images").dataset.images.split(",")
-
-// var i = 0
-
-// function placeImage(x,y, imagesList) {
-//   // console.log(imagesList[i], i)
-//   if (imagesList[i]) {
-//     const nextImage = imagesList[i].replace(/ *"*\[*\]*/g,'')
-//     const img = document.createElement("img")
-//     img.setAttribute('src', nextImage)
-//     img.style.position = 'absolute'
-//     img.style.left = x + 'px'
-//     img.style.top = y + 'px'
-//     img.style.transform = 'translate(-50%, -50%) scale(0.7)'
-//     img.style.pointerEvents = 'none'
-//     img.style.objectFit = 'contain'
-//     document.body.appendChild(img)
-//   }
-// =======
-document.addEventListener("turbolinks:load", function() {
+document.addEventListener("DOMContentLoaded", function() {
   // document.addEventListener("DOMContentLoaded", function(){
-    const imagesFirst = document.querySelectorAll(".project-image-first")
+    const imagesFirsts = document.querySelectorAll(".project-image-first")
     const projectImageContainers = document.querySelectorAll(".projectbg")
   // const imagesList = document.querySelector(".data-images").dataset.images.split(",")
   let i = 0
@@ -71,7 +48,6 @@ document.addEventListener("turbolinks:load", function() {
           projectImageContainer.appendChild(img)
         // })
       })
-// >>>>>>> 84087ad929a62d56dbe6f8e4f2eddcbf49b489f8
 
       imgLoad.src = nextImage
     }
