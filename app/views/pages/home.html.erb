@@ -35,7 +35,7 @@
  -->        <% project.pictures.each do |picture| %>
         <%= image_tag(picture.url, class:"project-image-first clickcursor mobile-only") %>
         <% end %>
-        <%= image_tag(project.pictures.first.url, class:"project-image-first clickcursor") %>
+        <%= image_tag(project.pictures.first.url, class:"project-image-first projectimg clickcursor") %>
         <div data-images="<%= project.pictures.pluck(:url) %>" class="data-images"></div>
       </div>
     </div>

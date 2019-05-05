@@ -1,11 +1,12 @@
-// document.addEventListener("DOMContentLoaded", function(){
 document.addEventListener("DOMContentLoaded", function() {
 
   const drawingButton = document.querySelector('.drawing')
   const drawingImage = document.querySelector('.drawing-img')
+  console.log('hkj')
 
   drawingButton.addEventListener('click', function() {
-    // event.preventDefault()
+    console.log(this)
+    event.preventDefault()
     if (drawingImage.style.display === "none") {
       drawingImage.style.display = "block";
       setTimeout(function(){
@@ -17,4 +18,4 @@ document.addEventListener("DOMContentLoaded", function() {
    }
  })
 })
-// })
+

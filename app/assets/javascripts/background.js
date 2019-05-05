@@ -27,8 +27,6 @@ var App = ( function() {
         render();
 
         canvas.addEventListener( 'mousemove', function( event ) {
-            console.log( event );
-
             state.mousePosition = [
                 event.layerX,
                 ( canvas.height - event.layerY )
