@@ -1,4 +1,3 @@
-// document.addEventListener("DOMContentLoaded", function(){
 document.addEventListener("DOMContentLoaded", function() {
 
   const section = document.querySelector('section')
