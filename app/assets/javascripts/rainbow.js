@@ -3,7 +3,6 @@ document.addEventListener("DOMContentLoaded", function() {
   const drawingButton = document.querySelector('.drawing')
 
   drawingButton.addEventListener('mouseover', function() {
-    console.log('jkbkjb')
 
     (function() {
       var settings = {
