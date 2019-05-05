@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", function() {
   const arrowProject = document.querySelectorAll(".arrow-project")
   const colorBg = document.querySelectorAll(".colorbg")
   const body = document.querySelector('body')
+  const website = document.querySelectorAll('.website')
 
   var isInViewport = function (elem) {
     var distance = elem.getBoundingClientRect()
@@ -26,10 +27,12 @@ document.addEventListener("DOMContentLoaded", function() {
       if (isInViewport(projectBg[i])) {
         arrowProject[i].classList.add("rightrotate")
         descriptionProject[i].classList.remove("hide")
+        website[i].classList.remove("hide")
         body.style.backgroundColor = colorBg[i].style.backgroundColor
       } else {
         arrowProject[i].classList.remove("rightrotate")
         descriptionProject[i].classList.add("hide")
+        website[i].classList.add("hide")
       }
     }
   }, false)

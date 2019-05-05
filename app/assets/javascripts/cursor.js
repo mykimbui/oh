@@ -1,4 +1,3 @@
-// document.addEventListener("DOMContentLoaded", function(event) {
 document.addEventListener("DOMContentLoaded", function() {
 
   const bodyTag = document.querySelector("body");

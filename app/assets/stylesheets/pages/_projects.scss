@@ -26,4 +26,13 @@
 
 .project-image-first {
   object-fit: cover;
+  width: 700px;
+}
+
+.website-link a {
+  color: #877d76;
+  text-decoration: underline;
+  &:hover {
+      text-decoration: none;
+  }
 }

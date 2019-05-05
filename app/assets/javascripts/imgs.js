@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function() {
   const projectImageContainers = document.querySelectorAll(".projectbg")
   // const imagesList = document.querySelector(".data-images").dataset.images.split(",")
   let i = 0
-  const scale = 0.9
+  const scale = 0.8
   const imgArray = []
 
   function placeImage(x,y, imagesList, projectImageContainer) {
@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", function() {
       const nextImage = imagesList[i].replace(/ *"*\[*\]*/g,'')
       const img = document.createElement("img")
       img.setAttribute('src', nextImage)
+      console.log(img)
 
       const imgLoad = new Image()
 
@@ -24,8 +25,6 @@ document.addEventListener("DOMContentLoaded", function() {
         const yBleedTop =     (y - imgHeight / 2 )
 
         img.style.position = 'absolute'
-        img.style.height = 'auto'
-        img.style.width = 100 + '%'
 
         if (xBleedRight > 0) {
           img.style.left = projectImageContainer.offsetWidth - (imgWidth / 2) + 'px'

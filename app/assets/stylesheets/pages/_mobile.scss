@@ -8,7 +8,9 @@ ul.bottom-bar {
 }
 
 @media only screen and (max-width: 800px) {
-
+  .project-image-first {
+    padding: 0.2em;
+  }
   .navbar-ohmy {
     font-size: 25px;
     .introduction {

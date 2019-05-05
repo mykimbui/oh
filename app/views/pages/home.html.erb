@@ -8,12 +8,19 @@
 </section>
 
 <div class="wrapper">
-    <canvas id="canvas" width="100%" height="100%"></canvas>
+  <canvas id="canvas" width="100%" height="100%"></canvas>
   <div class="menu-menu">
     <ul class="fixed">
       <% @projects.each do |project| %>
       <li class="title-project"><%= project.name %><%= image_tag("arrow-up-right.svg", class:"arrow-project arrow fading") %></li>
       <li class="description-project hide fade-in"><%= project.description%></li>
+      <li class="website hide fade-in website-link">
+        <% if project.website %>
+        <%=link_to(project.website) do %>
+        See website
+        <% end %>
+        <% end %>
+      </li>
       <% end %>
     </ul>
   </div>
@@ -28,15 +35,23 @@
           <li class="projecttitlemobile"><%= project.name %></li>
           <li class="infomobile fading">Info</li>
         </ul>
-        <div class="infomobileshow"><%= project.description%></div>
+        <div class="infomobileshow website-link"><%= project.description%>
+          <% if project.website %>
+          <%=link_to(project.website) do %>
+          See website
+          <% end %>
+          <% end %>
+        </div>
       </div>
       <div class="colorbg clickcursor">
-<!--       <div class="colorbg" style="background-color: <%= project.background %>;">
- -->        <% project.pictures.each do |picture| %>
+        <% project.pictures.each do |picture| %>
         <%= image_tag(picture.url, class:"project-image-first clickcursor mobile-only") %>
         <% end %>
         <%= image_tag(project.pictures.first.url, class:"project-image-first projectimg clickcursor") %>
-        <div data-images="<%= project.pictures.pluck(:url) %>" class="data-images"></div>
+        <% project_pictures_array = [] %>
+        <% project.pictures.pluck(:url).each { |p| project_pictures_array << image_path(p) } %>
+        <div data-images="<%= project_pictures_array %>" class="data-images"></div>
+        <%#raise %>
       </div>
     </div>
     <% end %>
@@ -45,65 +60,65 @@
 </div>
 
 <script type="shader/vertex" id="vs">
-attribute vec4 position;
+  attribute vec4 position;
 
-void main() {
-    gl_Position = position;
+  void main() {
+  gl_Position = position;
 }
 </script>
 
 <script type="shader/fragment" id="fs">
 
-precision mediump float;
+  precision mediump float;
 
-uniform vec2 resolution;
-uniform float time;
-uniform vec2 mousePosition;
+  uniform vec2 resolution;
+  uniform float time;
+  uniform vec2 mousePosition;
 
-void main() {
-    vec2 uv = gl_FragCoord.xy / resolution.xy;
-    vec2 mousePosition = mousePosition.xy / resolution.xy;
+  void main() {
+  vec2 uv = gl_FragCoord.xy / resolution.xy;
+  vec2 mousePosition = mousePosition.xy / resolution.xy;
 
-    vec2 p[4];
-    p[0] = vec2(0.1, 0.9);
-    p[1] = vec2(0.9, 0.9);
-    p[2] = vec2(0.5, 0.1);
-    p[3] = mousePosition;
+  vec2 p[4];
+  p[0] = vec2(0.1, 0.9);
+  p[1] = vec2(0.9, 0.9);
+  p[2] = vec2(0.5, 0.1);
+  p[3] = mousePosition;
 
-    vec3 c[4];
-    c[0] = vec3( ( 150.0 / 255.0 ), ( 214.0 / 255.0 ), ( 237.0 / 255.0 ) );
-    c[1] = vec3( ( 255.0 / 255.0 ), ( 255.0 / 255.0 ), ( 255.0 / 255.0 ) );
-    c[2] = vec3( ( 255.0 / 255.0 ), ( 250.0 / 255.0 ), ( 200.0 / 255.0 ) );
-    c[3] = vec3( ( 177.0 / 255.0 ), ( 130.0 / 255.0 ), ( 192.0 / 255.0 ) );
+  vec3 c[4];
+  c[0] = vec3( ( 150.0 / 255.0 ), ( 214.0 / 255.0 ), ( 237.0 / 255.0 ) );
+  c[1] = vec3( ( 255.0 / 255.0 ), ( 255.0 / 255.0 ), ( 255.0 / 255.0 ) );
+  c[2] = vec3( ( 255.0 / 255.0 ), ( 250.0 / 255.0 ), ( 200.0 / 255.0 ) );
+  c[3] = vec3( ( 177.0 / 255.0 ), ( 130.0 / 255.0 ), ( 192.0 / 255.0 ) );
 
-    float blend = 2.0;
-
-
-    // calc IDW (Inverse Distance Weight) interpolation
-    float w[4];
-    vec3 sum = vec3( 0.0 );
-    float valence = 0.0;
-    for( int i = 0; i < 4; i++ ) {
-        // 0 ... 1
-        float distance = length( uv - p[i] );
-        if( distance == 0.0 ) {
-            distance = 1.0;
-        }
-
-        float w =  1.0 / pow( distance, blend );
-        sum += w * c[i];
-        // sum = mix( sum, c[i], ( 1.0 - distance ) );
-        valence += w;
-    }
-    sum /= valence;
+  float blend = 2.0;
 
 
-    // apply gamma 2.2 (Approx. of linear => sRGB conversion. To make perceptually linear gradient)
-    sum = pow( sum, vec3( 1.0 / 1.0 ) );
+  // calc IDW (Inverse Distance Weight) interpolation
+  float w[4];
+  vec3 sum = vec3( 0.0 );
+  float valence = 0.0;
+  for( int i = 0; i < 4; i++ ) {
+  // 0 ... 1
+  float distance = length( uv - p[i] );
+  if( distance == 0.0 ) {
+  distance = 1.0;
+}
+
+float w =  1.0 / pow( distance, blend );
+sum += w * c[i];
+// sum = mix( sum, c[i], ( 1.0 - distance ) );
+valence += w;
+}
+sum /= valence;
 
 
-    // output
-    gl_FragColor = vec4( sum.xyz, 1.0 );
+// apply gamma 2.2 (Approx. of linear => sRGB conversion. To make perceptually linear gradient)
+sum = pow( sum, vec3( 1.0 / 1.0 ) );
+
+
+// output
+gl_FragColor = vec4( sum.xyz, 1.0 );
 }
 </script>
 
