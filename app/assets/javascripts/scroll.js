@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function() {
   const arrowTop = document.getElementById('arrow-top')
   const top = document.getElementById('top')
 
-  scrollTo = (element) => {
+  const scrollTo = (element) => {
     window.scroll({
       behavior: 'smooth',
       left: 0,
@@ -14,9 +14,19 @@ document.addEventListener("DOMContentLoaded", function() {
     console
   }
 
+  const scrollToProject = (element) => {
+   positionElement = element.getBoundingClientRect()
+   window.scroll({
+     behavior: 'smooth',
+     left: 0,
+     top: positionElement.top
+   })
+   console
+ }
+
   for (let i=0; i < title.length; i++) {
     title[i].addEventListener('click', function() {
-      scrollTo(projectImg[i])
+      scrollToProject(projectImg[i])
     })
   }
 
