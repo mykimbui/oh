@@ -44,8 +44,8 @@ Picture.create(url: "02-ohmy-holy00.png", project_id: c.id)
 Picture.create(url: "02-ohmy-holy0.png", project_id: c.id)
 Picture.create(url: "02-ohmy-holy1.png", project_id: c.id)
 
-Picture.create(url: "04-ohmy-ainthere1.gif", project_id: d.id)
 Picture.create(url: "04-ohmy-ainthere0.gif", project_id: d.id)
+Picture.create(url: "04-ohmy-ainthere1.gif", project_id: d.id)
 
 Picture.create(url: "05-ohmy-webarchive0.png", project_id: e.id)
 Picture.create(url: "05-ohmy-webarchive1.png", project_id: e.id)
@@ -59,7 +59,7 @@ Picture.create(url: "06-ohmy-coming3.png", project_id: f.id)
 
 Picture.create(url: "08-ohmy-logo0.png", project_id: g.id)
 Picture.create(url: "08-ohmy-logo1.png", project_id: g.id)
-Picture.create(url: "08-ohmy-logo2.gif", project_id: g.id)
+Picture.create(url: "08-ohmy-logo2.png", project_id: g.id)
 
 Picture.create(url: "09-ohmy-experiment0.gif", project_id: h.id)
 Picture.create(url: "09-ohmy-experiment1.gif", project_id: h.id)
