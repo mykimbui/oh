@@ -54,7 +54,10 @@ Picture.create(url: "06-ohmy-coming1.png", project_id: 6)
 Picture.create(url: "06-ohmy-coming2.png", project_id: 6)
 Picture.create(url: "06-ohmy-coming3.png", project_id: 6)
 
-Picture.create(url: "https://picsum.photos/900/600/?image=0", project_id: 7)
+Picture.create(url: "08-ohmy-logo0.png", project_id: 7)
+Picture.create(url: "08-ohmy-logo1.png", project_id: 7)
+Picture.create(url: "08-ohmy-logo2.gif", project_id: 7)
+
 
 Picture.create(url: "09-ohmy-experiment0.gif", project_id: 8)
 Picture.create(url: "09-ohmy-experiment1.gif", project_id: 8)
