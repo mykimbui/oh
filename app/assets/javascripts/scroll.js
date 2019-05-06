@@ -2,7 +2,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
   const title = document.querySelectorAll(".title-project")
   const projectImg = document.querySelectorAll(".projectimg")
-
+  const arrowTop = document.querySelector('.arrow-top')
+  const top = document.getElementById('top')
 
   scrollTo = (element) => {
     window.scroll({
@@ -21,19 +22,9 @@ document.addEventListener("DOMContentLoaded", function() {
     })
   }
 
-  // for (let i=0; i < title.length; i++) {
-  //   title[i].addEventListener('click', scrollTo.bind(this,projectImg[i]), false)
-  //   }
-
-  // document.addEventListener('click', function (event) {
-  //   for (i=0; i < title.length; i++) {
-
-  //     if (event.target.matches('.title-project')[i]) {
-  //       scrollTo(projectImg[i])
-  //     }
-  //   }
-
-  // }, false);
+  arrowTop.addEventListener('click', function() {
+    scrollTo(top)
+  })
 
 
 })

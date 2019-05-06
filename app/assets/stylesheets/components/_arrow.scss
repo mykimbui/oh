@@ -17,3 +17,12 @@
 .biggerarrow {
   width: 50px;
 }
+
+.arrow-top {
+  position: fixed;
+  bottom: 1rem;
+  left: 2rem;
+  z-index: 1;
+  width: 60px;
+  transform: rotate(-45deg);
+}
