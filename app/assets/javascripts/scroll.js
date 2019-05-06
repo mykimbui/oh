@@ -11,17 +11,15 @@ document.addEventListener("DOMContentLoaded", function() {
       left: 0,
       top: element.offsetTop
     })
-    console
   }
 
   const scrollToProject = (element) => {
-   positionElement = element.getBoundingClientRect()
+   let positionElement = element.getBoundingClientRect()
    window.scroll({
      behavior: 'smooth',
      left: 0,
      top: positionElement.top
    })
-   console
  }
 
   for (let i=0; i < title.length; i++) {
