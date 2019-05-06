@@ -17,6 +17,7 @@
   animation-direction: alternate;
   animation-fill-mode: forwards;
   transform-origin: 0% 50%;
+  z-index: 30;
 }
 
 @keyframes feather {
