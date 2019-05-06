@@ -23,12 +23,14 @@ document.addEventListener("DOMContentLoaded", function() {
     cursor.style.filter = "blur(0px)"
     cursor.style.width = "20px"
     cursor.style.height = "20px"
+    // cursor.style.display = 'block'
   }
 
   const leaveArea = function() {
     cursor.style.filter = "blur(8px)"
     cursor.style.width = "30px"
     cursor.style.height = "30px"
+    // cursor.style.display = 'none'
   }
 
   document.addEventListener("mousedown", function (event) {
