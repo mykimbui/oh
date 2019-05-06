@@ -15,10 +15,8 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   for (let i=0; i < title.length; i++) {
-    const thisTitle = title[i]
-    const thisProject = projectImg[i]
-    thisTitle.addEventListener('click', function() {
-      scrollTo(thisProject)
+    title[i].addEventListener('click', function() {
+      scrollTo(projectImg[i])
     })
   }
 
