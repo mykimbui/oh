@@ -17,7 +17,7 @@
       <li class="title-project"><%= project.name %><%= image_tag("arrow-up-right.svg", class:"arrow-project arrow fading") %></li>
       <li class="description-project hide fade-in"><%= project.description%></li>
       <li class="website hide fade-in website-link">
-        <%=link_to("See website", project.website) if project.website %>
+        <%=link_to_blank("See website", project.website) if project.website %>
       </li>
       <% end %>
     </ul>
@@ -34,7 +34,7 @@
           <li class="infomobile fading">Info</li>
         </ul>
         <div class="infomobileshow website-link"><%= project.description%>
-          <%=link_to("See website", project.website) if project.website %>
+          <%=link_to_blank("See website", project.website) if project.website %>
         </div>
       </div>
       <div class="colorbg clickcursor">
