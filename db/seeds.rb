@@ -21,7 +21,6 @@ g = Project.create(name: "Logos", background: "#ca472d", description:"Variety of
 h = Project.create(name: "Experiments", background: "#f7f7f7", website:"https://facefilter.netlify.com/", description:"Experiments is a personal project that gives me the freedom to learn new programs, languages or a new technology by creating anything I want with it. Since starting this, I have been teaching myself Cinema 4D, shaders, generative design and three.js.")
 i = Project.create(name: "Fruit Stickers Collective", background: "#f7f7f7", website: "https://fruitstickerscollective.netlify.com/", description:"I like to collect fruit stickers, so I made a website. If you have any cool sticker, please send it to me :)")
 
-
 Picture.create(url: "00-ohmy-text0.gif", project_id: a.id)
 Picture.create(url: "00-ohmy-text1.gif", project_id: a.id)
 Picture.create(url: "00-ohmy-text2.gif", project_id: a.id)
@@ -69,7 +68,7 @@ Picture.create(url: "09-ohmy-experiment3.gif", project_id: h.id)
 Picture.create(url: "09-ohmy-experiment4.gif", project_id: h.id)
 Picture.create(url: "09-ohmy-experiment5.gif", project_id: h.id)
 
-Picture.create(url: "10-ohmy-fruit0.gif", project_id: j.id)
-Picture.create(url: "10-ohmy-fruit1.gif", project_id: j.id)
+Picture.create(url: "10-ohmy-fruit0.gif", project_id: i.id)
+Picture.create(url: "10-ohmy-fruit1.gif", project_id: i.id)
 
 
