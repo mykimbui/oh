@@ -15,11 +15,7 @@
       <li class="title-project"><%= project.name %><%= image_tag("arrow-up-right.svg", class:"arrow-project arrow fading") %></li>
       <li class="description-project hide fade-in"><%= project.description%></li>
       <li class="website hide fade-in website-link">
-        <% if project.website %>
-        <%=link_to(project.website) do %>
-        See website
-        <% end %>
-        <% end %>
+        <%=link_to("See website", project.website) if project.website %>
       </li>
       <% end %>
     </ul>
@@ -36,11 +32,7 @@
           <li class="infomobile fading">Info</li>
         </ul>
         <div class="infomobileshow website-link"><%= project.description%>
-          <% if project.website %>
-          <%=link_to(project.website) do %>
-          See website
-          <% end %>
-          <% end %>
+          <%=link_to("See website", project.website) if project.website %>
         </div>
       </div>
       <div class="colorbg clickcursor">
@@ -51,7 +43,6 @@
         <% project_pictures_array = [] %>
         <% project.pictures.pluck(:url).each { |p| project_pictures_array << image_path(p) } %>
         <div data-images="<%= project_pictures_array %>" class="data-images"></div>
-        <%#raise %>
       </div>
     </div>
     <% end %>

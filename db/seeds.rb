@@ -66,7 +66,7 @@ Picture.create(url: "09-ohmy-experiment3.gif", project_id: 8)
 Picture.create(url: "09-ohmy-experiment4.gif", project_id: 8)
 Picture.create(url: "09-ohmy-experiment5.gif", project_id: 8)
 
-Picture.create(url: "10-ohmy-fruit0", project_id: 9)
-Picture.create(url: "10-ohmy-fruit1", project_id: 9)
+Picture.create(url: "10-ohmy-fruit0.gif", project_id: 9)
+Picture.create(url: "10-ohmy-fruit1.gif", project_id: 9)
 
 
