@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
   const title = document.querySelectorAll(".title-project")
   const projectImg = document.querySelectorAll(".projectimg")
-  const arrowTop = document.querySelector('.arrow-top')
+  const arrowTop = document.getElementById('arrow-top')
   const top = document.getElementById('top')
 
   scrollTo = (element) => {

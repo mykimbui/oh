@@ -18,11 +18,15 @@
   width: 50px;
 }
 
-.arrow-top {
+#arrow-top {
   position: fixed;
   bottom: 1rem;
   left: 2rem;
   z-index: 1;
+  pointer-events: auto;
+}
+
+.arrow-top {
   width: 60px;
   transform: rotate(-45deg);
 }
