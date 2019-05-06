@@ -37,9 +37,7 @@
       </div>
       <div class="colorbg clickcursor">
         <% project.pictures.each do |picture| %>
-        <% if picture.url %>
         <%= image_tag(picture.url, class:"project-image-first clickcursor mobile-only") %>
-        <% end %>
         <% end %>
         <%= image_tag(project.pictures.first.url, class:"project-image-first projectimg clickcursor") %>
         <% project_pictures_array = [] %>
