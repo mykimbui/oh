@@ -8,4 +8,7 @@ class ApplicationController < ActionController::Base
   #   response.headers["Pragma"] = "no-cache"
   #   response.headers["Expires"] = "Fri, 01 Jan 1990 00:00:00 GMT"
   # end
+  def default_url_options
+    { host: ENV["HOST"] || "localhost:3000" }
+  end
 end

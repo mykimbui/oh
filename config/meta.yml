@@ -1,0 +1,5 @@
+meta_product_name: "My Kim Bui"
+meta_title: "My Kim Bui - Portfolio 🍦"
+meta_description: "My Kim Bui is an interactive designer. Check out my work ;)"
+meta_image: "metatag.png" # should exist in `app/assets/images/`
+twitter_account: "@mykilicious"   # required for Twitter Cards
