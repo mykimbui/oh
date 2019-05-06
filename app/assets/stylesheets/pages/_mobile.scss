@@ -1,6 +1,7 @@
 .mobile-only {
   display: none;
 }
+
 ul.bottom-bar {
   padding-right: 10px;
   display: flex;
@@ -77,6 +78,10 @@ ul.bottom-bar {
     color: black;
     text-shadow: 0.5px 0.5px 0.5px gray;
     font-size: 25px;
+  }
+
+  .notmobile {
+    display: none;
   }
 
 }

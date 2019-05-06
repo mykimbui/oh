@@ -39,7 +39,7 @@
         <% project.pictures.each do |picture| %>
         <%= image_tag(picture.url, class:"project-image-first clickcursor mobile-only") %>
         <% end %>
-        <%= image_tag(project.pictures.first.url, class:"project-image-first projectimg clickcursor") %>
+        <%= image_tag(project.pictures.first.url, class:"notmobile project-image-first projectimg clickcursor") %>
         <% project_pictures_array = [] %>
         <% project.pictures.pluck(:url).each { |p| project_pictures_array << image_path(p) } %>
         <div data-images="<%= project_pictures_array %>" class="data-images"></div>
