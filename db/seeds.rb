@@ -6,8 +6,9 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Project.destroy_all
+
 Picture.destroy_all
+Project.destroy_all
 
 Project.create(name: "Text Messages", background: "#cc6b66", description: "Website for Texty, a service that gives the businesses the ability to send text messages in bulk to their clients.")
 Project.create(name: "Electra", background: "#224a88", description:"Organic typeface based on the work of Charles Dwiggins. Download here.")
@@ -60,7 +61,6 @@ Picture.create(url: "06-ohmy-coming3.png", project_id: 6)
 Picture.create(url: "08-ohmy-logo0.png", project_id: 7)
 Picture.create(url: "08-ohmy-logo1.png", project_id: 7)
 Picture.create(url: "08-ohmy-logo2.gif", project_id: 7)
-
 
 Picture.create(url: "09-ohmy-experiment0.gif", project_id: 8)
 Picture.create(url: "09-ohmy-experiment1.gif", project_id: 8)

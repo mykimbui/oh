@@ -25,6 +25,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const yBleedTop =     (y - imgHeight / 2 )
 
         img.style.position = 'absolute'
+        img.style.boxShadow: "1px 1px 1px 0px rgba(0,0,0,0.75)"
 
         if (xBleedRight > 0) {
           img.style.left = projectImageContainer.offsetWidth - (imgWidth / 2) + 'px'
