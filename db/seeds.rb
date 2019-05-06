@@ -39,6 +39,8 @@ Picture.create(url: "01-ohmy-electra0.png", project_id: b.id)
 Picture.create(url: "01-ohmy-electra1.png", project_id: b.id)
 Picture.create(url: "01-ohmy-electra2.png", project_id: b.id)
 
+Picture.create(url: "02-ohmy-holy000.png", project_id: c.id)
+Picture.create(url: "02-ohmy-holy00.png", project_id: c.id)
 Picture.create(url: "02-ohmy-holy0.png", project_id: c.id)
 Picture.create(url: "02-ohmy-holy1.png", project_id: c.id)
 
