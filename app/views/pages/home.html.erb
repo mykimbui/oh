@@ -3,7 +3,7 @@
   </div>
 </div>
 
-<div id="arrow-top"><%= image_tag("arrow-up-right.svg", class:"arrow-top")  %></div>
+<div class="clickarea" id="arrow-top"><%= image_tag("arrow-up-right.svg", class:"arrow-top")  %></div>
 
 <section class="fading" style="display: none;">
   <video></video>
@@ -37,7 +37,7 @@
           <%=link_to_blank("See website", project.website) if project.website %>
         </div>
       </div>
-      <div class="colorbg clickcursor">
+      <div class="colorbg clickarea clickcursor">
         <% project.pictures.each do |picture| %>
         <%= image_tag(picture.url, class:"project-image-first clickcursor mobile-only") %>
         <% end %>

@@ -73,7 +73,7 @@ ul.bottom-bar {
     position: absolute;
     top: 20px;
     padding: 10px;
-    mix-blend-mode: overlay;
+    mix-blend-mode: difference;
     display: none;
     color: #877d76;
     text-shadow: 0.5px 0.5px 0.5px gray;
