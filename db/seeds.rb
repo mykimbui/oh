@@ -47,8 +47,6 @@ Picture.create(url: "04-ohmy-ainthere0.gif", project_id: d.id)
 
 Picture.create(url: "05-ohmy-webarchive0.png", project_id: e.id)
 Picture.create(url: "05-ohmy-webarchive1.png", project_id: e.id)
-Picture.create(url: "05-ohmy-webarchive2.png", project_id: e.id)
-Picture.create(url: "05-ohmy-webarchive3.png", project_id: e.id)
 Picture.create(url: "05-ohmy-webarchive4.png", project_id: e.id)
 
 Picture.create(url: "06-ohmy-coming0.gif", project_id: f.id)
