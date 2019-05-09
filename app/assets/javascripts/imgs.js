@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function() {
   const projectImageContainers = document.querySelectorAll(".projectbg")
   // const imagesList = document.querySelector(".data-images").dataset.images.split(",")
   let i = 0
-  const scale = 0.9
+  const scale = 0.7
   const imgArray = []
 
   function placeImage(x,y, imagesList, projectImageContainer) {

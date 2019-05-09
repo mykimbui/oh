@@ -10,16 +10,16 @@
 Picture.destroy_all
 Project.destroy_all
 
-a = Project.create(name: "Text Messages", background: "#cc6b66", description: "Website for Texty, a service that gives businesses the resources to send text messages in bulk to their clients.")
+a = Project.create(name: "Texty", background: "#cc6b66", description: "Website for Texty, a service that gives businesses the resources to send text messages in bulk to their clients.")
 b = Project.create(name: "Electra", background: "#224a88", website:'https://drive.google.com/open?id=1o5_XS4NTB1qS9a9XltnUfLo0mT_ZFAkO', description:"Organic typeface based on the work of William Addison Dwiggins. You can try it yourself :)")
 c = Project.create(name: "Holy Gothic", background: "#224a88", description:"Gothic typeface. Coming soon.")
 d = Project.create(name: "Ain't There", background: "#e4a6b5", website: "https://nothere.herokuapp.com/",description:"A website journal containing all the travels I have done in the past years with pictures.")
 e = Project.create(name: "Internet Archive", background: "#71a793", description:"An archive of all the websites we find on the internet. This project is made in a need of organising our references. Project made in collaboration with Faris Kassim. Coming soon")
-f = Project.create(name: "Coming Soon", background: "#c4b2ba", website: "https://cloth.netlify.com/", description:"A countdown to a new project. Flag is interactive with mouse click and move.")
+f = Project.create(name: "Fruit Stickers Collective", background: "#f7f7f7", website: "https://fruitstickerscollective.netlify.com/", description:"I like to collect fruit stickers, so I made a website. If you have any cool sticker, please send it to me :)")
+# f = Project.create(name: "Coming Soon", background: "#c4b2ba", website: "https://cloth.netlify.com/", description:"A countdown to a new project. Flag is interactive with mouse click and move.")
 # Project.create(name: "Drawing Tool", background: "#e7b1a2", website:"https://drawslowly.netlify.com/", description:"Self-initiated project. A traditional drawing tool with a twist. You draw 3D shapes in the space.")
 g = Project.create(name: "Logos", background: "#ca472d", description:"Variety of personal and professional icons and logotypes.")
 h = Project.create(name: "Experiments", background: "#f7f7f7", website:"https://facefilter.netlify.com/", description:"Experiments is a personal project that gives me the freedom to learn new programs, languages or a new technology by creating anything I want with it. Since starting this, I have been teaching myself Cinema 4D, shaders, generative design and three.js.")
-i = Project.create(name: "Fruit Stickers Collective", background: "#f7f7f7", website: "https://fruitstickerscollective.netlify.com/", description:"I like to collect fruit stickers, so I made a website. If you have any cool sticker, please send it to me :)")
 
 Picture.create(url: "00-ohmy-text0.gif", project_id: a.id)
 Picture.create(url: "00-ohmy-text1.gif", project_id: a.id)
@@ -47,15 +47,12 @@ Picture.create(url: "02-ohmy-holy1.png", project_id: c.id)
 Picture.create(url: "04-ohmy-ainthere0.gif", project_id: d.id)
 Picture.create(url: "04-ohmy-ainthere1.gif", project_id: d.id)
 
+Picture.create(url: "10-ohmy-fruit0.gif", project_id: f.id)
+Picture.create(url: "10-ohmy-fruit1.gif", project_id: f.id)
+
 Picture.create(url: "05-ohmy-webarchive0.png", project_id: e.id)
 Picture.create(url: "05-ohmy-webarchive1.png", project_id: e.id)
 Picture.create(url: "05-ohmy-webarchive4.png", project_id: e.id)
-
-Picture.create(url: "06-ohmy-coming0.gif", project_id: f.id)
-Picture.create(url: "06-ohmy-coming0.png", project_id: f.id)
-Picture.create(url: "06-ohmy-coming1.png", project_id: f.id)
-Picture.create(url: "06-ohmy-coming2.png", project_id: f.id)
-Picture.create(url: "06-ohmy-coming3.png", project_id: f.id)
 
 Picture.create(url: "08-ohmy-logo0.png", project_id: g.id)
 Picture.create(url: "08-ohmy-logo1.png", project_id: g.id)
@@ -67,8 +64,12 @@ Picture.create(url: "09-ohmy-experiment2.gif", project_id: h.id)
 Picture.create(url: "09-ohmy-experiment3.gif", project_id: h.id)
 Picture.create(url: "09-ohmy-experiment4.gif", project_id: h.id)
 Picture.create(url: "09-ohmy-experiment5.gif", project_id: h.id)
+Picture.create(url: "06-ohmy-coming0.gif", project_id: h.id)
+Picture.create(url: "06-ohmy-coming0.png", project_id: h.id)
+Picture.create(url: "06-ohmy-coming1.png", project_id: h.id)
+Picture.create(url: "06-ohmy-coming2.png", project_id: h.id)
+Picture.create(url: "06-ohmy-coming3.png", project_id: h.id)
 
-Picture.create(url: "10-ohmy-fruit0.gif", project_id: i.id)
-Picture.create(url: "10-ohmy-fruit1.gif", project_id: i.id)
+
 
 

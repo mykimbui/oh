@@ -22,11 +22,11 @@ document.addEventListener("DOMContentLoaded", function() {
    })
  }
 
-  for (let i=0; i < title.length; i++) {
-    title[i].addEventListener('click', function() {
-      scrollToProject(projectImg[i])
-    })
-  }
+  // for (let i=0; i < title.length; i++) {
+  //   title[i].addEventListener('click', function() {
+  //     scrollToProject(projectImg[i])
+  //   })
+  // }
 
   arrowTop.addEventListener('click', function() {
     scrollTo(top)
