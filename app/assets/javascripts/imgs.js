@@ -25,7 +25,6 @@ document.addEventListener("DOMContentLoaded", function() {
         const yBleedTop =     (y - imgHeight / 2 )
 
         img.style.position = 'absolute'
-        // img.style.boxShadow = "1px 1px 1px 0px rgba(0,0,0,0.75)"
 
         if (xBleedRight > 0) {
           img.style.left = projectImageContainer.offsetWidth - (imgWidth / 2) + 'px'
@@ -48,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function() {
       })
 
       imgLoad.src = nextImage
-
+      // nextImage.previousSibling.style.filter = 'blur(10px)'
     }
 
     i++
@@ -57,7 +56,9 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   }
 
-
+  function blurImage(image) {
+    image.style.filter = 'blur(5px)'
+  }
 
   projectImageContainers.forEach(function(projectImageContainer) {
     const imagesList = projectImageContainer.querySelector(".data-images").dataset.images.split(",")
@@ -66,6 +67,9 @@ document.addEventListener("DOMContentLoaded", function() {
       const posLeft = event.pageX - projectImageContainer.offsetLeft
       const posTop = event.pageY - projectImageContainer.offsetTop
       placeImage(posLeft, posTop, imagesList, projectImageContainer)
+      imagesFirsts.forEach(function(imagesFirst){
+        blurImage(imagesFirst)
+      })
       // imgArray.push(event)
       // console.log(imgArray)
       // window.addEventListener('resize', function(){

@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     observer = new IntersectionObserver(function(entries) {
       entries.forEach(function(entry) {
-          console.log(entry)
+          // console.log(entry)
           if (entry.intersectionRatio > 0) {
             arrowProject[i].classList.add("rightrotate")
             descriptionProject[i].classList.remove("hide")
@@ -67,7 +67,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
   function handleIntersect(entries, options) {
     entries.forEach(function(entry) {
-        console.log(entry)
+        // console.log(entry)
         if (entry.intersectionRatio > 0) {
           arrowProject[0].classList.add("rightrotate")
           descriptionProject[0].classList.remove("hide")

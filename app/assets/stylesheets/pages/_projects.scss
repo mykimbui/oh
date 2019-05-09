@@ -1,7 +1,7 @@
 .description-project {
   width: 25%;
   // display: none;
-  color: #f5e9e9;
+  color: gray;
 }
 
 .hide {
@@ -28,6 +28,8 @@
   width: 45em;
   right: 3em;
   position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .website-link a {
