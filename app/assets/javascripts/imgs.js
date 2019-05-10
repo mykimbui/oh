@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function() {
   function blurPreviousImage(images) {
     if (images.length) {
       let image = images[images.length - 1]
-      image.className += " blur";
+      image.className += "blur";
     }
   }
 
@@ -47,12 +47,11 @@ document.addEventListener("DOMContentLoaded", function() {
           img.style.top = y + 'px'
         }
         img.style.transform = 'translate(-50%, -50%) scale('+scale+')'
-        // img.style.pointerEvents = 'none'
+
         projectImageContainer.appendChild(img)
       })
 
       imgLoad.src = nextImage
-      // nextImage.previousSibling.style.filter = 'blur(10px)'
     }
 
     i++

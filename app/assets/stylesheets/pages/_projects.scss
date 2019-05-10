@@ -44,3 +44,8 @@
   filter: blur(10px);
   // transition: all 0.3s ease-in;
 }
+
+.img {
+  position: absolute;
+  pointer-events : none;
+}
