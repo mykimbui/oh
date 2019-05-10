@@ -1,22 +1,20 @@
-document.addEventListener("DOMContentLoaded", function() {
-  const imagesFirsts = document.querySelectorAll(".project-image-first")
-  const projectImageContainers = document.querySelectorAll(".projectbg")
-  const imagesList = document.querySelector(".data-images").dataset.images.split(",")
+// document.addEventListener("DOMContentLoaded", function() {
+//   const imagesFirsts = document.querySelectorAll(".project-image-first")
+//   const projectImageContainers = document.querySelectorAll(".projectbg")
+//   const imagesList = document.querySelector(".data-images").dataset.images.split(",")
 
-  let counter = 0
-  let i = 0
-  for (b=0; b < imagesFirsts.length; b++) {
-    const nextImage = imagesList[i].replace(/ *"*\[*\]*/g,'')
-    //console.log(imagesFirsts[b], i)
-    imagesFirsts[b].addEventListener('click', function() {
-      console.log("ee")
-      imagesFirsts[b].src = nextImage[b][++counter]
-      if(counter == imagesList.length){
-        counter = 0;
-      }
-    })
-  }
-})
+//   let counter = 0
+//   let i = 0
+//   for (b=0; b < imagesFirsts.length; b++) {
+//     const nextImage = imagesList[i].replace(/ *"*\[*\]*/g,'')
+//     imagesFirsts[b].addEventListener('click', function() {
+//       imagesFirsts[b].src = nextImage[b][++counter]
+//       if(counter == imagesList.length){
+//         counter = 0;
+//       }
+//     })
+//   }
+// })
 //   let i = 0
 //   const scale = 0.9
 

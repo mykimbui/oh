@@ -18,8 +18,6 @@ document.addEventListener("DOMContentLoaded", function() {
       const nextImage = imagesList[i].replace(/ *"*\[*\]*/g,'')
       const img = document.createElement("img")
       img.setAttribute('src', nextImage)
-      console.log(img)
-
       const imgLoad = new Image()
 
       imgLoad.addEventListener('load', function() {
@@ -71,9 +69,6 @@ document.addEventListener("DOMContentLoaded", function() {
       const posLeft = event.pageX - projectImageContainer.offsetLeft
       const posTop = event.pageY - projectImageContainer.offsetTop
       placeImage(posLeft, posTop, imagesList, projectImageContainer)
-      imagesFirsts.forEach(function(imagesFirst){
-        blurImage(imagesFirst)
-      })
       // imgArray.push(event)
       // console.log(imgArray)
       // window.addEventListener('resize', function(){
