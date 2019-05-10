@@ -3,7 +3,7 @@
   </div>
 </div>
 
-<div class="clickarea" id="arrow-top"><%= image_tag("arrow-up-right.svg", class:"arrow-top")  %></div>
+<div class="clickarea hide" id="arrow-top"><%= image_tag("arrow-up-right.svg", class:"arrow-top")  %></div>
 
 <section class="fading" style="display: none;">
   <video></video>
@@ -38,9 +38,11 @@
         </div>
       </div>
       <div class="colorbg clickarea clickcursor">
-        <% project.pictures.each do |picture| %>
-        <%= image_tag(picture.url, class:"project-image-first clickcursor mobile-only") %>
-        <% end %>
+        <div class="main-carousel mobile-only">
+          <% project.pictures.each do |picture| %>
+          <%= image_tag(picture.url, class:"project-image-first clickcursor mobile-only carousel-cell") %>
+          <% end %>
+        </div>
         <%= image_tag(project.pictures.first.url, class:"notmobile project-image-first projectimg clickcursor") %>
         <% project_pictures_array = [] %>
         <% project.pictures.pluck(:url).each { |p| project_pictures_array << image_path(p) } %>

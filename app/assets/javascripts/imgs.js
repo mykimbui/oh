@@ -59,23 +59,26 @@ document.addEventListener("DOMContentLoaded", function() {
       i = 0
     }
     blurPreviousImage(projectImageContainer.children)
+    // window.addEventListener('resize', function(){
+    //   projectImageContainer.removeChild(img)
+    // }, true)
   }
 
-  projectImageContainers.forEach(function(projectImageContainer) {
-    const imagesList = projectImageContainer.querySelector(".data-images").dataset.images.split(",")
-    projectImageContainer.addEventListener('click', function(event) {
-      event.preventDefault()
-      const posLeft = event.pageX - projectImageContainer.offsetLeft
-      const posTop = event.pageY - projectImageContainer.offsetTop
-      placeImage(posLeft, posTop, imagesList, projectImageContainer)
-      // imgArray.push(event)
-      // console.log(imgArray)
-      // window.addEventListener('resize', function(){
-      //   imgArray.removeChild(event)
-      // }, true)
-    })
-  })
+  if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
 
+    projectImageContainers.forEach(function(projectImageContainer) {
+      const imagesList = projectImageContainer.querySelector(".data-images").dataset.images.split(",")
+      projectImageContainer.addEventListener('click', function(event) {
+        event.preventDefault()
+        const posLeft = event.pageX - projectImageContainer.offsetLeft
+        const posTop = event.pageY - projectImageContainer.offsetTop
+        placeImage(posLeft, posTop, imagesList, projectImageContainer)
+      // imagesFirsts.forEach(function(image) {
+      //   image.style.filter = 'blur(10px)'
+      // })
+    })
+    })
+  }
   // projectImageContainers.forEach(function(projectImageContainer) {
   //   const imagesList = projectImageContainer.querySelector(".data-images").dataset.images.split(",")
   //   projectImageContainer.addEventListener('touchend', function(event) {

@@ -28,6 +28,14 @@ document.addEventListener("DOMContentLoaded", function() {
   //   })
   // }
 
+  window.onscroll = function() {
+    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+      arrowTop.classList.remove("hide")
+    }
+    else
+      arrowTop.classList.add("hide")
+  }
+
   arrowTop.addEventListener('click', function() {
     scrollTo(top)
   })
