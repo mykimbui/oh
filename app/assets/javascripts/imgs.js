@@ -64,8 +64,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // }, true)
   }
 
-  if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-
+if (window.innerWidth > 760) {
     projectImageContainers.forEach(function(projectImageContainer) {
       const imagesList = projectImageContainer.querySelector(".data-images").dataset.images.split(",")
       projectImageContainer.addEventListener('click', function(event) {
