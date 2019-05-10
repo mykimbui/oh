@@ -6,6 +6,13 @@ document.addEventListener("DOMContentLoaded", function() {
   const scale = 0.7
   const imgArray = []
 
+  function blurPreviousImage(images) {
+    if (images.length) {
+      let image = images[images.length - 1]
+      image.className += " blur";
+    }
+  }
+
   function placeImage(x,y, imagesList, projectImageContainer) {
     if (imagesList[i]) {
       const nextImage = imagesList[i].replace(/ *"*\[*\]*/g,'')
@@ -54,10 +61,7 @@ document.addEventListener("DOMContentLoaded", function() {
     if (i >= imagesList.length) {
       i = 0
     }
-  }
-
-  function blurImage(image) {
-    image.style.filter = 'blur(5px)'
+    blurPreviousImage(projectImageContainer.children)
   }
 
   projectImageContainers.forEach(function(projectImageContainer) {
