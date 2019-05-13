@@ -42,7 +42,8 @@
 }
 
 .blur {
-  filter: blur(10px);
+  opacity: 0.2;
+  // filter: blur(10px);
   // transition: all 0.3s ease-in;
 }
 

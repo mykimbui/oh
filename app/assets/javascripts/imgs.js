@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function() {
   function blurPreviousImage(images) {
     if (images.length) {
       let image = images[images.length - 1]
-      image.className += "blur";
+      image.className += "blur"
     }
   }
 
@@ -59,6 +59,9 @@ document.addEventListener("DOMContentLoaded", function() {
       i = 0
     }
     blurPreviousImage(projectImageContainer.children)
+    imagesFirsts.forEach(function(image) {
+        image.style.opacity = 0.3
+      })
     // window.addEventListener('resize', function(){
     //   projectImageContainer.removeChild(img)
     // }, true)
@@ -72,9 +75,6 @@ if (window.innerWidth > 760) {
         const posLeft = event.pageX - projectImageContainer.offsetLeft
         const posTop = event.pageY - projectImageContainer.offsetTop
         placeImage(posLeft, posTop, imagesList, projectImageContainer)
-      // imagesFirsts.forEach(function(image) {
-      //   image.style.filter = 'blur(10px)'
-      // })
     })
     })
   }

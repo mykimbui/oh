@@ -17,9 +17,9 @@ d = Project.create(name: "Ain't There", background: "#e4a6b5", website: "https:/
 e = Project.create(name: "Internet Archive", background: "#71a793", description:"An archive of all the websites we find on the internet. This project is made in a need of organising our references. Project made in collaboration with Faris Kassim. Coming soon.")
 f = Project.create(name: "Fruit Stickers Collective", background: "#f7f7f7", website: "https://fruitstickerscollective.netlify.com/", description:"I like to collect fruit stickers, so I made a website. If you have any cool sticker, please send it to me :)")
 # f = Project.create(name: "Coming Soon", background: "#c4b2ba", website: "https://cloth.netlify.com/", description:"A countdown to a new project. Flag is interactive with mouse click and move.")
-# Project.create(name: "Drawing Tool", background: "#e7b1a2", website:"https://drawslowly.netlify.com/", description:"Self-initiated project. A traditional drawing tool with a twist. You draw 3D shapes in the space.")
 g = Project.create(name: "Logos", background: "#ca472d", description:"Variety of personal and professional icons and logotypes.")
 h = Project.create(name: "Experiments", background: "#f7f7f7", website:"https://facefilter.netlify.com/", description:"Experiments is a personal project that gives me the freedom to learn new programs, languages or a new technology by creating anything I want with it. Since starting this, I have been teaching myself Cinema 4D, shaders, generative design and three.js.")
+i = Project.create(name: "Drawing Tool", background: "#e7b1a2", website:"https://drawwithgradients.netlify.com/", description:"Self-initiated project. A traditional drawing tool with a twist. You draw 3D shapes in the space.")
 
 Picture.create(url: "00-ohmy-text0.gif", project_id: a.id)
 Picture.create(url: "00-ohmy-text1.gif", project_id: a.id)
@@ -70,6 +70,8 @@ Picture.create(url: "06-ohmy-coming1.png", project_id: h.id)
 Picture.create(url: "06-ohmy-coming2.png", project_id: h.id)
 Picture.create(url: "06-ohmy-coming3.png", project_id: h.id)
 
+Picture.create(url: "11-ohmy-draw0.gif", project_id: i.id)
+Picture.create(url: "11-ohmy-draw1.gif", project_id: i.id)
 
 
 
