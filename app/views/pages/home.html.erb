@@ -15,9 +15,11 @@
     <ul class="fixed">
       <% @projects.each do |project| %>
       <li class="title-project"><%= project.name %><%= image_tag("arrow-up-right.svg", class:"arrow-project arrow fading") %></li>
-      <li class="description-project hide fade-in"><%= project.description%></li>
+      <li class="description-project hide fade-in">
+        <span class="whiteshadow"><%= project.description%></span>
+      </li>
       <li class="website hide fade-in website-link">
-        <%=link_to_blank("See website", project.website) if project.website %>
+        <span class="whiteshadow"><%=link_to_blank("See website", project.website) if project.website %><%=link_to_blank("Download", project.download) if project.download %></span>
       </li>
       <% end %>
     </ul>
@@ -33,8 +35,10 @@
           <li class="projecttitlemobile"><%= project.name %></li>
           <li class="infomobile fading">Info</li>
         </ul>
-        <div class="infomobileshow website-link"><%= project.description%>
+        <div class="infomobileshow website-link">
+          <%= project.description%>
           <%=link_to_blank("See website", project.website) if project.website %>
+          <%=link_to_blank("Download", project.download) if project.download %>
         </div>
       </div>
       <div class="colorbg clickarea clickcursor">
@@ -43,10 +47,15 @@
           <%= image_tag(picture.url, class:"project-image-first clickcursor mobile-only carousel-cell") %>
           <% end %>
         </div>
+        <% if project.pictures.present? %>
         <%= image_tag(project.pictures.first.url, class:"notmobile project-image-first projectimg clickcursor") %>
         <% project_pictures_array = [] %>
         <% project.pictures.pluck(:url).each { |p| project_pictures_array << image_path(p) } %>
         <div data-images="<%= project_pictures_array %>" class="data-images"></div>
+        <% else %>
+        <input class='input-font' type="text" placeholder="the lazy dog jumped over the quick brown fox" style='font-family:<%= project.font %>'>
+        <% end %>
+
       </div>
     </div>
     <% end %>

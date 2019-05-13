@@ -28,6 +28,13 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'Electra';
+    src: font-url('Electra-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 // Define fonts for body and headers
 $body-font: "SpaceGrotesk-Regular", "sans-serif";
 $headers-font: "SpaceGrotesk-Regular", "sans-serif";

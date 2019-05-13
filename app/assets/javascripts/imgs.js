@@ -7,9 +7,10 @@ document.addEventListener("DOMContentLoaded", function() {
   const imgArray = []
 
   function blurPreviousImage(images) {
+    console.log(images)
     if (images.length) {
       let image = images[images.length - 1]
-      image.className += "blur"
+      image.className += " blur"
     }
   }
 
@@ -58,24 +59,26 @@ document.addEventListener("DOMContentLoaded", function() {
     if (i >= imagesList.length) {
       i = 0
     }
-    blurPreviousImage(projectImageContainer.children)
-    imagesFirsts.forEach(function(image) {
-        image.style.opacity = 0.3
-      })
+    blurPreviousImage(projectImageContainer.querySelectorAll("img:not(.mobile-only)"))
+    // imagesFirsts.forEach(function(image) {
+    //   image.style.opacity = 0.3
+    // })
     // window.addEventListener('resize', function(){
     //   projectImageContainer.removeChild(img)
     // }, true)
   }
 
-if (window.innerWidth > 760) {
+  if (window.innerWidth > 760) {
     projectImageContainers.forEach(function(projectImageContainer) {
-      const imagesList = projectImageContainer.querySelector(".data-images").dataset.images.split(",")
-      projectImageContainer.addEventListener('click', function(event) {
-        event.preventDefault()
-        const posLeft = event.pageX - projectImageContainer.offsetLeft
-        const posTop = event.pageY - projectImageContainer.offsetTop
-        placeImage(posLeft, posTop, imagesList, projectImageContainer)
-    })
+      if (projectImageContainer.querySelector(".data-images")) {
+        const imagesList = projectImageContainer.querySelector(".data-images").dataset.images.split(",")
+        projectImageContainer.addEventListener('click', function(event) {
+          event.preventDefault()
+          const posLeft = event.pageX - projectImageContainer.offsetLeft
+          const posTop = event.pageY - projectImageContainer.offsetTop
+          placeImage(posLeft, posTop, imagesList, projectImageContainer)
+        })
+      }
     })
   }
   // projectImageContainers.forEach(function(projectImageContainer) {

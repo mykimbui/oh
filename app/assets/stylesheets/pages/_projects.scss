@@ -1,7 +1,8 @@
 .description-project {
   width: 25%;
   // display: none;
-  color: gray;
+  color: #1d1d1d;
+  opacity: 0.9;
 }
 
 .hide {
@@ -34,7 +35,7 @@
 }
 
 .website-link a {
-  color: #877d76;
+  color: #1d1d1d;
   text-decoration: underline;
   &:hover {
     text-decoration: none;
@@ -44,10 +45,15 @@
 .blur {
   opacity: 0.2;
   // filter: blur(10px);
-  // transition: all 0.3s ease-in;
+  transition: all 0.3s cubic-bezier(0.895, 0.03, 0.685, 0.22);
 }
 
 .img {
   position: absolute;
   pointer-events : none;
+}
+
+.whiteshadow {
+  white-space: pre-wrap;
+  background-color: white;
 }

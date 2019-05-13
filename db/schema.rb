@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_05_190713) do
+ActiveRecord::Schema.define(version: 2019_05_13_181845) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,6 +30,9 @@ ActiveRecord::Schema.define(version: 2019_05_05_190713) do
     t.datetime "updated_at", null: false
     t.string "background"
     t.string "website"
+    t.string "font"
+    t.string "download"
+    t.string "undernote"
   end
 
   add_foreign_key "pictures", "projects"

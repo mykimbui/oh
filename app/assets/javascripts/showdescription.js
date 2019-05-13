@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", function() {
   const body = document.querySelector('body')
   const website = document.querySelectorAll('.website')
 
+
 //   var isInViewport = function (elem) {
 //     var distance = elem.getBoundingClientRect()
 //     return (
@@ -40,46 +41,50 @@ document.addEventListener("DOMContentLoaded", function() {
 // })
 
 
-  function createObserver(item, i){
-    var observer;
+function createObserver(item, i){
+  var observer;
 
-    var options = {
-      root: null,
-      rootMargin: "0px",
-      threshold: 0
-    }
+  var options = {
+    root: null,
+    rootMargin: "0px",
+    threshold: 0
+  }
 
-    observer = new IntersectionObserver(function(entries) {
-      entries.forEach(function(entry) {
+  observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
           // console.log(entry)
           if (entry.intersectionRatio > 0) {
             arrowProject[i].classList.add("rightrotate")
             descriptionProject[i].classList.remove("hide")
+            website[i].classList.remove("hide")
             body.style.backgroundColor = colorBg[i].style.backgroundColor
           } else {
             arrowProject[i].classList.remove("rightrotate")
             descriptionProject[i].classList.add("hide")
+            website[i].classList.add("hide")
           }
-      })
-    }, options)
-    observer.observe(item)
-  }
+        })
+  }, options)
+  observer.observe(item)
+}
 
-  function handleIntersect(entries, options) {
-    entries.forEach(function(entry) {
+function handleIntersect(entries, options) {
+  entries.forEach(function(entry) {
         // console.log(entry)
         if (entry.intersectionRatio > 0) {
           arrowProject[0].classList.add("rightrotate")
           descriptionProject[0].classList.remove("hide")
+          website[i].classList.remove("hide")
           body.style.backgroundColor = colorBg[0].style.backgroundColor
         } else {
           arrowProject[0].classList.remove("rightrotate")
           descriptionProject[0].classList.add("hide")
+          website[i].classList.add("hide")
         }
-    })
-  }
+      })
+}
 
-  for (i = 0; i < projectBg.length; i++) {
-    createObserver(projectBg[i], i)
-  }
+for (i = 0; i < projectBg.length; i++) {
+  createObserver(projectBg[i], i)
+}
 })
