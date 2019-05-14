@@ -5,7 +5,8 @@
     "@rails/webpacker": "3.5",
     "bootstrap": "3",
     "fsevents": "^2.0.6",
-    "jquery": "^3.3.1"
+    "jquery": "^3.3.1",
+    "heroku-prebuild": "yarn install --production=false"
   },
   "devDependencies": {
     "webpack-dev-server": "2.11.2"
