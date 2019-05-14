@@ -19,7 +19,7 @@ f = Project.create(name: "Fruit Stickers Collective", background: "#f7f7f7", web
 # f = Project.create(name: "Coming Soon", background: "#c4b2ba", website: "https://cloth.netlify.com/", description:"A countdown to a new project. Flag is interactive with mouse click and move.")
 g = Project.create(name: "Logos", background: "#ca472d", description:"Variety of personal and professional icons and logotypes.", undernote:"Client and personal projects")
 h = Project.create(name: "Experiments", background: "#f7f7f7", website:"https://facefilter.netlify.com/", description:"Experiments is a personal project that gives me the freedom to learn new programs, languages or a new technology by creating anything I want with it. Since starting this, I have been teaching myself Cinema 4D, shaders, generative design and three.js.", undernote:"Self-initiated project")
-i = Project.create(name: "Drawing Tool", background: "#e7b1a2", website:"https://drawwithgradients.netlify.com/", description:"Self-initiated project. A traditional drawing tool with a twist. You draw 3D shapes in the space.", undernote:"Self-initiated project")
+i = Project.create(name: "Drawing Tool", background: "#e7b1a2", website:"https://drawwithgradients.netlify.com/", description:"A traditional drawing tool with a twist. You draw 3D shapes in the space.", undernote:"Self-initiated project")
 
 Picture.create(url: "00-ohmy-text0.gif", project_id: a.id)
 Picture.create(url: "00-ohmy-text1.gif", project_id: a.id)
