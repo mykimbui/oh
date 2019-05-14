@@ -1,13 +1,12 @@
 document.addEventListener("DOMContentLoaded", function() {
   const imagesFirsts = document.querySelectorAll(".project-image-first")
   const projectImageContainers = document.querySelectorAll(".projectbg")
-  // const imagesList = document.querySelector(".data-images").dataset.images.split(",")
+
   let i = 0
   const scale = 0.7
   const imgArray = []
 
   function blurPreviousImage(images) {
-    console.log(images)
     if (images.length) {
       let image = images[images.length - 1]
       image.className += " blur"
@@ -60,12 +59,6 @@ document.addEventListener("DOMContentLoaded", function() {
       i = 0
     }
     blurPreviousImage(projectImageContainer.querySelectorAll("img:not(.mobile-only)"))
-    // imagesFirsts.forEach(function(image) {
-    //   image.style.opacity = 0.3
-    // })
-    // window.addEventListener('resize', function(){
-    //   projectImageContainer.removeChild(img)
-    // }, true)
   }
 
   if (window.innerWidth > 760) {
@@ -81,16 +74,5 @@ document.addEventListener("DOMContentLoaded", function() {
       }
     })
   }
-  // projectImageContainers.forEach(function(projectImageContainer) {
-  //   const imagesList = projectImageContainer.querySelector(".data-images").dataset.images.split(",")
-  //   projectImageContainer.addEventListener('touchend', function(event) {
-  //     event.preventDefault()
-  //     const posLeft = event.pageX - projectImageContainer.offsetLeft
-  //     const posTop = event.pageY - projectImageContainer.offsetTop
-  //     placeImage(posLeft, posTop, imagesList, projectImageContainer)
-  //   })
-  // })
-
-// })
 
 })

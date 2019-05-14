@@ -3,7 +3,11 @@
   </div>
 </div>
 
-<div class="clickarea hide" id="arrow-top"><%= image_tag("arrow-up-right.svg", class:"arrow-top")  %></div>
+<div class="clickarea hide" id="arrow-top">
+  <%= image_tag("arrow-up-right.svg", class:"arrow-top")  %>
+</div>
+
+<div class="wreckit clickarea">Bubble me</div>
 
 <section class="fading" style="display: none;">
   <video></video>
@@ -18,7 +22,8 @@
       <li class="description-project hide fade-in">
         <span class="whiteshadow"><%= project.description%></span>
       </li>
-      <li class="website hide fade-in website-link">
+      <li class='undernote'><%#= project.undernote%></li>
+      <li class="website hide fade-in website-link clickarea">
         <span class="whiteshadow"><%=link_to_blank("See website", project.website) if project.website %><%=link_to_blank("Download", project.download) if project.download %></span>
       </li>
       <% end %>
