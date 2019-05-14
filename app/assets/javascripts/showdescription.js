@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", function() {
   const colorBg = document.querySelectorAll(".colorbg")
   const body = document.querySelector('body')
   const website = document.querySelectorAll('.website')
+  const undernote = document.querySelectorAll('.undernote')
 
 
 //   var isInViewport = function (elem) {
@@ -57,32 +58,34 @@ function createObserver(item, i){
             arrowProject[i].classList.add("rightrotate")
             descriptionProject[i].classList.remove("hide")
             website[i].classList.remove("hide")
+            undernote[i].classList.remove("hide")
             body.style.backgroundColor = colorBg[i].style.backgroundColor
           } else {
             arrowProject[i].classList.remove("rightrotate")
             descriptionProject[i].classList.add("hide")
             website[i].classList.add("hide")
+            undernote[i].classList.add("hide")
           }
         })
   }, options)
   observer.observe(item)
 }
 
-function handleIntersect(entries, options) {
-  entries.forEach(function(entry) {
-        // console.log(entry)
-        if (entry.intersectionRatio > 0) {
-          arrowProject[0].classList.add("rightrotate")
-          descriptionProject[0].classList.remove("hide")
-          website[i].classList.remove("hide")
-          body.style.backgroundColor = colorBg[0].style.backgroundColor
-        } else {
-          arrowProject[0].classList.remove("rightrotate")
-          descriptionProject[0].classList.add("hide")
-          website[i].classList.add("hide")
-        }
-      })
-}
+// function handleIntersect(entries, options) {
+//   entries.forEach(function(entry) {
+//         // console.log(entry)
+//         if (entry.intersectionRatio > 0) {
+//           arrowProject[i].classList.add("rightrotate")
+//           descriptionProject[i].classList.remove("hide")
+//           website[i].classList.remove("hide")
+//           body.style.backgroundColor = colorBg[i].style.backgroundColor
+//         } else {
+//           arrowProject[i].classList.remove("rightrotate")
+//           descriptionProject[i].classList.add("hide")
+//           website[i].classList.add("hide")
+//         }
+//       })
+// }
 
 for (i = 0; i < projectBg.length; i++) {
   createObserver(projectBg[i], i)

@@ -22,7 +22,7 @@
       <li class="description-project hide fade-in">
         <span class="whiteshadow"><%= project.description%></span>
       </li>
-      <li class='undernote'><%#= project.undernote%></li>
+      <li class='undernote hide'><%= project.undernote%></li>
       <li class="website hide fade-in website-link clickarea">
         <span class="whiteshadow"><%=link_to_blank("See website", project.website) if project.website %><%=link_to_blank("Download", project.download) if project.download %></span>
       </li>
