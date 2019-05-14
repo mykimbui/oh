@@ -4,14 +4,7 @@
          font-url('SpaceGrotesk-Regular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
-}
-
-@font-face {
-    font-family: 'SpaceGrotesk-Light';
-    src: font-url('SpaceGrotesk-Light.woff2') format('woff2'),
-         font-url('SpaceGrotesk-Light.woff') format('woff');
-    font-weight: lighter;
-    font-style: normal;
+    font-display: auto;
 }
 
 @font-face {
@@ -19,13 +12,7 @@
     src: font-url('Wremena-Light.woff') format('woff');
     font-weight: lighter;
     font-style: normal;
-}
-
-@font-face {
-    font-family: 'Wremena-Regular';
-    src: font-url('Wremena-Regular.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+    font-display: auto;
 }
 
 @font-face {
@@ -33,19 +20,10 @@
     src: font-url('Electra-Regular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
+    font-display: auto;
 }
 
-// Define fonts for body and headers
 $body-font: "SpaceGrotesk-Regular", "sans-serif";
 $headers-font: "SpaceGrotesk-Regular", "sans-serif";
 
-// To use a font file (.woff) uncomment following lines
-// @font-face {
-//   font-family: "Font Name";
-//   src: font-url('FontFile.eot');
-//   src: font-url('FontFile.eot?#iefix') format('embedded-opentype'),
-//        font-url('FontFile.woff') format('woff'),
-//        font-url('FontFile.ttf') format('truetype')
-// }
-// $my-font: "Font Name";
 
