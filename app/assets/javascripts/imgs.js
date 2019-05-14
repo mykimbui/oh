@@ -16,42 +16,50 @@ document.addEventListener("DOMContentLoaded", function() {
   function placeImage(x,y, imagesList, projectImageContainer) {
     if (imagesList[i]) {
       const nextImage = imagesList[i].replace(/ *"*\[*\]*/g,'')
-      const img = document.createElement("img")
+      let img
+      if (/mp4/.test(nextImage)) {
+        img = document.createElement("video")
+      }
+      else {
+        img = document.createElement("img")
+      }
+
       img.setAttribute('src', nextImage)
-      const imgLoad = new Image()
+      if (/mp4/.test(nextImage)) {
+        img.setAttribute("autoplay", "autoplay");
+        img.setAttribute("loop", "loop");
+      }
 
-      imgLoad.addEventListener('load', function() {
-        const imgWidth = imgLoad.width * scale
-        const imgHeight = imgLoad.height * scale
 
-        const xBleedRight =   (x - imgWidth / 2 )  + imgWidth   - projectImageContainer.offsetWidth
-        const xBleedLeft =    (x - imgWidth / 2 )
-        const yBleedBottom =  (y - imgHeight / 2 ) + imgHeight  - projectImageContainer.offsetHeight
-        const yBleedTop =     (y - imgHeight / 2 )
+      const imgWidth = img.width * scale
+      const imgHeight = img.height * scale
 
-        img.style.position = 'absolute'
+      const xBleedRight =   (x - imgWidth / 2 )  + imgWidth   - projectImageContainer.offsetWidth
+      const xBleedLeft =    (x - imgWidth / 2 )
+      const yBleedBottom =  (y - imgHeight / 2 ) + imgHeight  - projectImageContainer.offsetHeight
+      const yBleedTop =     (y - imgHeight / 2 )
 
-        if (xBleedRight > 0) {
-          img.style.left = projectImageContainer.offsetWidth - (imgWidth / 2) + 'px'
-        } else if (xBleedLeft < 0) {
-          img.style.left = (imgWidth / 2) + 'px'
-        } else {
-          img.style.left = x + 'px'
-        }
+      img.style.position = 'absolute'
 
-        if (yBleedBottom > 0) {
-          img.style.top = projectImageContainer.offsetHeight - (imgHeight / 2) + 'px'
-        } else if (yBleedTop < 0) {
-          img.style.top = (imgHeight / 2) + 'px'
-        } else {
-          img.style.top = y + 'px'
-        }
-        img.style.transform = 'translate(-50%, -50%) scale('+scale+')'
+      if (xBleedRight > 0) {
+        img.style.left = projectImageContainer.offsetWidth - (imgWidth / 2) + 'px'
+      } else if (xBleedLeft < 0) {
+        img.style.left = (imgWidth / 2) + 'px'
+      } else {
+        img.style.left = x + 'px'
+      }
 
-        projectImageContainer.appendChild(img)
-      })
+      if (yBleedBottom > 0) {
+        img.style.top = projectImageContainer.offsetHeight - (imgHeight / 2) + 'px'
+      } else if (yBleedTop < 0) {
+        img.style.top = (imgHeight / 2) + 'px'
+      } else {
+        img.style.top = y + 'px'
+      }
+      img.style.transform = 'translate(-50%, -50%) scale('+scale+')'
+      projectImageContainer.appendChild(img)
 
-      imgLoad.src = nextImage
+      img.src = nextImage
     }
 
     i++

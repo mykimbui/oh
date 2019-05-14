@@ -19,12 +19,13 @@
     <ul class="fixed">
       <% @projects.each do |project| %>
       <li class="title-project"><%= project.name %><%= image_tag("arrow-up-right.svg", class:"arrow-project arrow fading") %></li>
+      <li class='undernote hide'><%= project.undernote%></li>
       <li class="description-project hide fade-in">
         <span class="whiteshadow"><%= project.description%></span>
       </li>
-      <li class='undernote hide'><%= project.undernote%></li>
       <li class="website hide fade-in website-link clickarea">
-        <span class="whiteshadow"><%=link_to_blank("See website", project.website) if project.website %><%=link_to_blank("Download", project.download) if project.download %></span>
+        <%=link_to_blank("See website", project.website) if project.website %>
+        <%=link_to_blank("Download", project.download) if project.download %>
       </li>
       <% end %>
     </ul>
@@ -41,6 +42,7 @@
           <li class="infomobile fading">Info</li>
         </ul>
         <div class="infomobileshow website-link">
+          <%= project.undernote%>
           <%= project.description%>
           <%=link_to_blank("See website", project.website) if project.website %>
           <%=link_to_blank("Download", project.download) if project.download %>
@@ -48,12 +50,22 @@
       </div>
       <div class="colorbg clickarea clickcursor">
         <div class="main-carousel mobile-only">
+          <% if project.pictures.present? %>
           <% project.pictures.each do |picture| %>
-          <%= image_tag(picture.url, class:"project-image-first clickcursor mobile-only carousel-cell") %>
+          <% if /mp4/ =~ picture.url %>
+          <%= video_tag(picture.url, autoplay: true, loop:true, muted:true, playsinline: true,class:"project-image-first clickcursor mobile-only carousel-cell")%>
+          <% else %>
+          <%= image_tag(picture.url, class:"project-image-first clickcursor mobile-only carousel-cell")%>
+          <% end %>
+          <% end %>
           <% end %>
         </div>
         <% if project.pictures.present? %>
-        <%= image_tag(project.pictures.first.url, class:"notmobile project-image-first projectimg clickcursor") %>
+        <% if /mp4/ =~ project.pictures.first.url %>
+          <%= video_tag(project.pictures.first.url, autoplay: true, loop:true, muted:true, playsinline: true,class:"project-image-first clickcursor notmobile projectimg video")%>
+        <% else %>
+          <%= image_tag(project.pictures.first.url, class:"notmobile project-image-first projectimg clickcursor") %>
+        <% end %>
         <% project_pictures_array = [] %>
         <% project.pictures.pluck(:url).each { |p| project_pictures_array << image_path(p) } %>
         <div data-images="<%= project_pictures_array %>" class="data-images"></div>
