@@ -40,16 +40,16 @@ function init() {
 
 
 
-  // var path = "<%= asset_path('screen.png') %>"
+  // var path = "<%= asset_path('screen.jpg') %>"
 
-  // var format = '.png'
+  // var format = '.jpg'
   // var urls = [
   // path + 'screen' + format, path + 'screen' + format,
   // path + 'screen' + format, path + 'screen' + format,
   // path + 'screen' + format, path + 'screen' + format
   // ]
 
-  var urls = ["<%= asset_path('screen.png') %>", "<%= asset_path('screen.png') %>", "<%= asset_path('screen.png') %>","<%= asset_path('screen.png') %>","<%= asset_path('screen.png') %>","<%= asset_path('screen.png') %>"]
+  var urls = ["<%= asset_path('screen.jpg') %>", "<%= asset_path('screen.jpg') %>", "<%= asset_path('screen.jpg') %>","<%= asset_path('screen.jpg') %>","<%= asset_path('screen.jpg') %>","<%= asset_path('screen.jpg') %>"]
   var textureCube = new THREE.CubeTextureLoader().load( urls )
   textureCube.format = THREE.RGBFormat
   textureCube.minFilter = THREE.LinearFilter
