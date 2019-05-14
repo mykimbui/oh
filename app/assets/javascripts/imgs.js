@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
   function blurPreviousImage(images) {
     if (images.length) {
-      let image = images[images.length - 1]
+      let image = images[images.length - 2]
       image.className += " blur"
     }
   }
@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", function() {
     if (i >= imagesList.length) {
       i = 0
     }
-    blurPreviousImage(projectImageContainer.querySelectorAll("img:not(.mobile-only)"))
+    blurPreviousImage(projectImageContainer.querySelectorAll("img:not(.mobile-only), video:not(.mobile-only)"))
   }
 
   if (window.innerWidth > 760) {
@@ -78,6 +78,7 @@ document.addEventListener("DOMContentLoaded", function() {
           const posLeft = event.pageX - projectImageContainer.offsetLeft
           const posTop = event.pageY - projectImageContainer.offsetTop
           placeImage(posLeft, posTop, imagesList, projectImageContainer)
+
         })
       }
     })
