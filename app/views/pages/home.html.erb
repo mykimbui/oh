@@ -53,7 +53,7 @@
           <% if project.pictures.present? %>
           <% project.pictures.each do |picture| %>
           <% if /mp4/ =~ picture.url %>
-          <%= video_tag(picture.url, autoplay: true, loop:true, muted:true, playsinline: true,class:"project-image-first clickcursor mobile-only carousel-cell")%>
+          <%= video_tag(picture.url, autoplay: true, loop:true, muted:true, playsinline: true,class:"project-image-first clickcursor mobile-only carousel-cell video")%>
           <% else %>
           <%= image_tag(picture.url, class:"project-image-first clickcursor mobile-only carousel-cell")%>
           <% end %>

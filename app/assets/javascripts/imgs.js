@@ -69,7 +69,7 @@ document.addEventListener("DOMContentLoaded", function() {
     blurPreviousImage(projectImageContainer.querySelectorAll("img:not(.mobile-only), video:not(.mobile-only)"))
   }
 
-  if (window.innerWidth > 760) {
+  if (window.innerWidth > 375) {
     projectImageContainers.forEach(function(projectImageContainer) {
       if (projectImageContainer.querySelector(".data-images")) {
         const imagesList = projectImageContainer.querySelector(".data-images").dataset.images.split(",")
