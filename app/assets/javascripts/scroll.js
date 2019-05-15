@@ -2,7 +2,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
   const title = document.querySelectorAll(".title-project")
   const projectImg = document.querySelectorAll(".projectimg")
-  const arrowTop = document.getElementById('arrow-top')
   const top = document.getElementById('top')
 
   const scrollTo = (element) => {
@@ -27,18 +26,6 @@ document.addEventListener("DOMContentLoaded", function() {
   //     scrollToProject(projectImg[i])
   //   })
   // }
-
-  window.onscroll = function() {
-    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
-      arrowTop.classList.remove("hide")
-    }
-    else
-      arrowTop.classList.add("hide")
-  }
-
-  arrowTop.addEventListener('click', function() {
-    scrollTo(top)
-  })
 
 
 })
