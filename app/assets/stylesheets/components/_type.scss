@@ -13,6 +13,7 @@
   &:focus {
     outline: none;
   }
+  z-index: 8;
 }
 
 .input-font::placeholder {

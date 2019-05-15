@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
       const allClicks = document.querySelectorAll(".clickme")
 
-      Math.min(Math.max(parseInt(allClicks.length), 10), 30)
+      Math.min(Math.max(parseInt(allClicks.length), 1), 20)
 
       // if (allClicks.length < 5) {
       //   item.appendChild(newClick);
