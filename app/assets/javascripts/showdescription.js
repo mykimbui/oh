@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", function() {
   const body = document.querySelector('body')
   const website = document.querySelectorAll('.website')
   const undernote = document.querySelectorAll('.undernote')
+  const space = document.querySelectorAll('.space')
 
 
 //   var isInViewport = function (elem) {
@@ -59,12 +60,14 @@ function createObserver(item, i){
             descriptionProject[i].classList.remove("hide")
             website[i].classList.remove("hide")
             undernote[i].classList.remove("hide")
+            space[i].classList.remove("hide")
             body.style.backgroundColor = colorBg[i].style.backgroundColor
           } else {
             arrowProject[i].classList.remove("rightrotate")
             descriptionProject[i].classList.add("hide")
             website[i].classList.add("hide")
             undernote[i].classList.add("hide")
+            space[i].classList.add("hide")
           }
         })
   }, options)

@@ -28,8 +28,10 @@
   <%= render 'application/favicon' %>
 </head>
 <body>
-  <%= render "shared/navbar" %>
-  <%= yield %>
+  <div class="overflow">
+    <%= render "shared/navbar" %>
+    <%= yield %>
+  </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/101/three.min.js"></script>
   <%= javascript_include_tag 'application' %>
   <%= javascript_pack_tag 'application' %>
