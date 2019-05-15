@@ -8,6 +8,14 @@
 }
 
 @font-face {
+    font-family: 'SpaceGrotesk-Medium';
+    src: font-url('SpaceGrotesk-Medium.woff2') format('woff2'),
+         font-url('SpaceGrotesk-Medium.woff') format('woff');
+    font-style: normal;
+    font-display: auto;
+}
+
+@font-face {
     font-family: 'Wremena-Light';
     src: font-url('Wremena-Light.woff') format('woff');
     font-weight: lighter;
@@ -18,6 +26,14 @@
 @font-face {
     font-family: 'Electra';
     src: font-url('Electra-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: auto;
+}
+
+@font-face {
+    font-family: 'BusinessHistory-Regular';
+    src: font-url('00BusinessHistory-Regular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
     font-display: auto;
