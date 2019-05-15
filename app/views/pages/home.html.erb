@@ -36,7 +36,7 @@
    <div class="cursor"></div>
    <ul>
     <% @projects.each do |project| %>
-    <div class="projectbg">
+    <div class="projectbg clickcursor">
       <div class="mobile-only sticky">
         <ul class="bottom-bar">
           <li class="projecttitlemobile"><%= project.name %></li>
@@ -51,7 +51,7 @@
           </ul>
         </div>
       </div>
-      <div class="colorbg clickarea clickcursor">
+      <div class="colorbg clickarea">
         <div class="main-carousel mobile-only">
           <% if project.pictures.present? %>
           <% project.pictures.each do |picture| %>
