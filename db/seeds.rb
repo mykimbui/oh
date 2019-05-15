@@ -10,16 +10,16 @@
 Picture.destroy_all
 Project.destroy_all
 
-a = Project.create(name: "Texty", background: "#cc6b66", description: "Website for Texty, a service that gives businesses the resources to send text messages in bulk to their clients.", undernote:"Freelance project for a startup")
 b = Project.create(name: "Electra", font: 'Electra', background: "#224a88", download:'https://drive.google.com/open?id=1o5_XS4NTB1qS9a9XltnUfLo0mT_ZFAkO', description:"Organic typeface based on the work of William Addison Dwiggins. You can try it yourself :)", undernote:"Self-initiated project")
 c = Project.create(name: "Holy Gothic", font:'Holy', background: "#224a88", description:"Gothic typeface. Coming soon.", undernote:"Self-initiated project")
-d = Project.create(name: "Ain't There", background: "#e4a6b5", website: "https://nothere.herokuapp.com/",description:"A website journal containing all the travels I have done in the past years with pictures.", undernote:"Self-initiated project")
-e = Project.create(name: "Internet Archive", background: "#71a793", description:"An archive of all the websites we find on the internet. This project is made in a need of organising our references. Project made in collaboration with Faris Kassim. Coming soon.", undernote:"Self-initiated project")
-f = Project.create(name: "Fruit Stickers Collective", background: "#f7f7f7", website: "https://fruitstickerscollective.netlify.com/", description:"I like to collect fruit stickers, so I made a website. If you have any cool sticker, please send it to me :)", undernote:"Self-initiated project")
-# f = Project.create(name: "Coming Soon", background: "#c4b2ba", website: "https://cloth.netlify.com/", description:"A countdown to a new project. Flag is interactive with mouse click and move.")
-g = Project.create(name: "Logos", background: "#ca472d", description:"Variety of personal and professional icons and logotypes.", undernote:"Client and personal projects")
-h = Project.create(name: "Experiments", background: "#f7f7f7", website:"https://facefilter.netlify.com/", description:"Experiments is a personal project that gives me the freedom to learn new programs, languages or a new technology by creating anything I want with it. Since starting this, I have been teaching myself Cinema 4D, shaders, generative design and three.js.", undernote:"Self-initiated project")
 i = Project.create(name: "Drawing Tool", background: "#e7b1a2", website:"https://drawwithgradients.netlify.com/", description:"A traditional drawing tool with a twist. You draw 3D shapes in the space.", undernote:"Self-initiated project")
+d = Project.create(name: "Ain't There", background: "#e4a6b5", website: "https://nothere.herokuapp.com/",description:"A website journal containing all the travels I have done in the past years with pictures.", undernote:"Self-initiated project")
+f = Project.create(name: "Fruit Stickers Collective", background: "#f7f7f7", website: "https://fruitstickerscollective.netlify.com/", description:"I like to collect fruit stickers, so I made a website. If you have any cool sticker, please send it to me :)", undernote:"Self-initiated project")
+h = Project.create(name: "Experiments", background: "#f7f7f7", website:"https://facefilter.netlify.com/", description:"Experiments is a personal project that gives me the freedom to learn new programs, languages or a new technology by creating anything I want with it. Since starting this, I have been teaching myself Cinema 4D, shaders, generative design and three.js.", undernote:"Self-initiated project")
+g = Project.create(name: "Logos", background: "#ca472d", description:"Variety of personal and professional icons and logotypes.", undernote:"Client and personal projects")
+a = Project.create(name: "Texty", background: "#cc6b66", description: "Website for Texty, a service that gives businesses the resources to send text messages in bulk to their clients.", undernote:"Freelance project for a startup")
+e = Project.create(name: "Internet Archive", background: "#71a793", description:"An archive of all the websites we find on the internet. This project is made in a need of organising our references. Project made in collaboration with Faris Kassim. Coming soon.", undernote:"Self-initiated project")
+# f = Project.create(name: "Coming Soon", background: "#c4b2ba", website: "https://cloth.netlify.com/", description:"A countdown to a new project. Flag is interactive with mouse click and move.")
 
 Picture.create(url: "00-ohmy-text0.mp4", project_id: a.id)
 Picture.create(url: "00-ohmy-text1.mp4", project_id: a.id)

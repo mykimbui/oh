@@ -10,6 +10,9 @@
   box-sizing: border-box;
   margin-right: 0.1em;
   outline: none;
+  &:focus {
+    outline: none;
+  }
 }
 
 .input-font::placeholder {
